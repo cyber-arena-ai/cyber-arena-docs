@@ -5,7 +5,7 @@ The selected vulnerability's impact identifies which objectives its floor
 witness reaches. Those objectives are labeled reproduction for that instance,
 and every other captured objective is escalation. The label is per-instance
 metadata rather than a property of the objective or its scope
-([I2](../invariants.md#i-floor-and-interpretation)), so the same scope is
+([H2](../invariants.md#h-interpretation)), so the same scope is
 reproduction in one challenge and escalation in another.
 
 Results are recorded as raw per-objective capability records — which objective, which

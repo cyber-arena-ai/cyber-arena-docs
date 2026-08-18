@@ -136,7 +136,7 @@ and it observes the mark as root on the victim's box. A facility that could
 plant without authority would describe an objective the attacker already holds.
 
 The constraint is therefore on how it plants rather than on how much
-authority it has ([E1](../invariants.md#e-layers)):
+authority it has ([E1](../invariants.md#e-facility-conduct)):
 
 > The facility plants through the operation the application exposes for that
 > asset class, at the privilege that operation requires.
@@ -148,7 +148,7 @@ protection were all chosen by the challenge, so the attacker's target is the
 challenge's file placement rather than the application's credential
 subsystem.
 
-One question decides it ([E2](../invariants.md#e-layers)): **after planting,
+One question decides it ([E2](../invariants.md#e-facility-conduct)): **after planting,
 did the challenge have to add any protection itself?** If it chmods, chowns,
 or picks the directory, the challenge is the mechanism. If it hands the
 application a typed object and the application stores it where it stores

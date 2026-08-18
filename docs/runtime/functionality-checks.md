@@ -23,7 +23,7 @@ judges — so that a defense cannot rewrite the check that grades it.
 
 The deep checker covers, minimally, the features on every materially
 distinct objective-reaching chain known at authoring time
-([H2](../invariants.md#h-functional-core)). Minimality is
+([G2](../invariants.md#g-functional-core)). Minimality is
 per-chain: the smallest workflow that exercises that feature's real
 semantics, not the smallest workflow overall. A checker covering only the
 originally selected attack chain would let a defender amputate the feature
