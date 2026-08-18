@@ -22,6 +22,8 @@ section is the contract.
 - **A4.** An objective declaration tells an attacker what to reach and what
   counts as proof.
 - **A5.** An objective may be a read, write, or execute operation.
+- **A6.** The application is stateful, and both parties can damage that
+  state.
 
 ### B. Trust boundary
 
@@ -63,6 +65,8 @@ section is the contract.
   context, rotate canaries, arm observed regions.
 - **E8.** Derivable state is restored and never scored, while non-derivable
   state is scored and kept to one canary per objective.
+- **E9.** Restart is idempotent: repeated restarts converge on the same
+  serving state.
 
 ### F. Recording
 
