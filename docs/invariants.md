@@ -32,8 +32,9 @@ section is the contract.
 
 ### C. Proof and credit
 
-- **C1.** Every round issues fresh proof material, and only the current
-  round's material may be credited.
+- **C1.** Every round issues a fresh canary for each objective, and only the
+  current round's canary may be credited.
+
 - **C2.** A canary is computable only by reaching its objective.
 - **C3.** An observed capture identifies the attacker that produced it.
 - **C4.** An execute objective's observed region is reachable only by
