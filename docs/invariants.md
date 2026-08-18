@@ -163,6 +163,7 @@ it.
 | **Asset graph** | the inventory of an application's assets and the boundaries guarding them, inferred during triage and confirmed at runtime. |
 | **Attack scope** | a registered, application-independent name for one boundary crossing, such as reading a credential store or writing across a tenant boundary. |
 | **Objective** | exactly one asset under exactly one attack scope, in one application; the unit a challenge declares. |
+| **Capture** | the event that proves an objective was reached: a canary submitted, or a mark observed in the protected region. |
 | **Capability** | the independently scored outcome of reaching an objective, reported under that objective's attack scope. |
 | **Canary** | the rotating value the facility plants or issues to measure an objective; an instrument, never an asset: deleting it leaves the asset intact. |
 | **Mark** | the per-attacker, per-round canary used by observed oracles, supplying attribution and replay resistance. |

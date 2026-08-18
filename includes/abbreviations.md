@@ -74,3 +74,7 @@
      abbr extension marks EVERY occurrence with no way to exclude one. A tooltip
      that is wrong more often than right is worse than none. Both remain defined
      in the terminology table. -->
+
+*[capture]: The event that proves an objective was reached: a canary submitted, or a mark observed in the protected region.
+*[Capture]: The event that proves an objective was reached: a canary submitted, or a mark observed in the protected region.
+*[captures]: The event that proves an objective was reached: a canary submitted, or a mark observed in the protected region.
