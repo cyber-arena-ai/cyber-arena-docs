@@ -94,3 +94,9 @@
 *[Locator]: The pointer an objective publishes: where the canary is planted for a read objective, or where it must be placed for a write or execute objective.
 *[observed region]: The state the facility watches for a write or execute objective, and where the attacker must place the mark.
 *[Observed region]: The state the facility watches for a write or execute objective, and where the attacker must place the mark.
+
+*[flag handler]: The per-challenge code that creates seed data and plants and rotates canaries in it, through application operations only.
+*[Flag handler]: The per-challenge code that creates seed data and plants and rotates canaries in it, through application operations only.
+*[deep checker]: The check that exercises the declared functional core and decides whether a defense is legitimate.
+*[Deep checker]: The check that exercises the declared functional core and decides whether a defense is legitimate.
+*[match secret]: The facility-held key that seeds per-team derivation, so no team can derive another's layout.

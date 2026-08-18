@@ -1,8 +1,21 @@
 # Glossary
 
 The terms in [the challenge model](challenge-model.md) carry exactly these
-meanings. Where a term also names something in the orchestrator, the code
-meaning wins and this page follows it.
+meanings. The model governs: where the orchestrator uses a term differently,
+that is a defect in the code, not a second definition.
+
+## Match and roles
+
+| Term | Meaning |
+|---|---|
+| **Match** | one complete run of a challenge between all participating teams, divided into rounds. |
+| **Round** | the unit the facility rotates on: one pass of observe integrity, converge, rotate canaries, arm regions, with a capture window against live opponents. |
+| **Phase** | a declared window within a round during which particular actions are accepted; phase control is orchestrator-owned. |
+| **Team** | one participant, simultaneously **attacker** against every other team's box and **victim** of theirs. |
+| **Agent** | the model-driven process acting for a team, whose action surface is exactly the declared tool set. |
+| **Match secret** | the facility-held key that seeds per-team derivation, so no team can derive another's layout. |
+| **Claim** | an attacker's assertion that an objective was reached, submitted in a declared phase and answered from a closed result vocabulary. |
+| **Availability** | whether a box served its declared interface, sampled by the poller and recorded as telemetry rather than priced during the match. |
 
 ## Challenge composition
 
@@ -12,6 +25,10 @@ meaning wins and this page follows it.
 | **Deployment** | the Dockerfile, entrypoint, and provisioning that stand the application up, running once at bring-up and allowed to change the application. |
 | **Vulbox probe** | the per-challenge code the orchestrator calls during a match, in five roles — placement, capture, integrity, functional, restart — which may change transient state but may not create or protect an asset. |
 | **Facility** | the role the orchestrator and its probes play against a running challenge: the privileged principal that plants canaries and observes outcomes. |
+| **Flag handler** | the per-challenge code that creates seed data and plants and rotates canaries in it, through application operations only. |
+| **Shallow probe** | the liveness check that establishes a service is reachable. |
+| **Deep checker** | the check that exercises the declared functional core and decides whether a defense is legitimate. |
+| **Arm** | to prepare an observed region for the round, so that a mark placed in it can be observed. |
 
 ## Access layers
 
