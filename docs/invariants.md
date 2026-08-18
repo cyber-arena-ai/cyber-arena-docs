@@ -22,8 +22,9 @@ section is the contract.
 - **A4.** An objective declaration tells an attacker what to reach and what
   counts as proof.
 - **A5.** An objective may be a read, write, or execute operation.
-- **A6.** The application is stateful, and both parties can damage that
-  state.
+- **A6.** The application is stateful, and the facility assumes its state is
+  dirty.
+
 
 ### B. Trust boundary
 
