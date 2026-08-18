@@ -22,13 +22,12 @@ section is the contract.
 
 - **A3.** No objective lies within the baseline identity's legitimate reach.
 
-- **A4.** No objective's proof material is contained in or derived from another
-  objective's.
-- **A5.** Objectives are derived from the asset graph and never from the
+
+- **A4.** Objectives are derived from the asset graph and never from the
   vulnerability.
-- **A6.** An objective declaration names the asset, its attack scope, its oracle
+- **A5.** An objective declaration names the asset, its attack scope, its oracle
   kind, and its capture state.
-- **A7.** An objective declaration never names the store.
+- **A6.** An objective declaration never names the store.
 
 ### B. Baseline identity
 
