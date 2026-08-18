@@ -7,7 +7,7 @@ layer carries a single rule.
 
 | Layer | Who acts there | Rule |
 |---|---|---|
-| **Public surface** | the attacker starts here | public surface; holds no secrets and assumes no good faith |
+| **Public surface** | the attacker starts here | holds no secrets and assumes no good faith |
 | **Guarded surface** | the facility acts here by right; the attacker must arrive here | typed operations whose protection the application authors — objectives live here |
 | **Infrastructure** | orchestration: container, filesystem, SSH, network | neither a scoring surface nor objective material |
 

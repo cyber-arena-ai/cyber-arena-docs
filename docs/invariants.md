@@ -63,8 +63,7 @@ section is the contract.
 - **E2.** An objective's protection is established by the application alone.
 - **E3.** Capture reads the application's authoritative state from a vantage
   neither party controls.
-- **E4.** Functional checks act only through the application's user-facing
-  interface.
+- **E4.** Functional checks act only through the public surface.
 
 - **E5.** Placement is convergent: from any prior state it lands on the
   declared state.
