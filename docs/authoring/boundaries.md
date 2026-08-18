@@ -66,8 +66,7 @@ Capability implication is separate from this and is not a defect. A stronger
 outcome will usually subsume a weaker one, so an attacker who reaches an
 execution objective may collect a read objective in the same step. That is the shape
 of a ladder, not a flaw in it. What independence requires is that no objective's witness is contained in or
-derived from another's — distinct values
-([C2](../invariants.md#c-proof-and-credit)) in distinct locations — so that when
+derived from another's — distinct values in distinct locations — so that when
 a defender closes one path the remaining objectives still have to be reached
 on their own.
 
