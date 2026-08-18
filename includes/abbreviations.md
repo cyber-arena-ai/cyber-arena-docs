@@ -20,14 +20,15 @@
 *[baseline identity]: The attacker's starting principal and everything that principal may legitimately do.
 *[Baseline identity]: The attacker's starting principal and everything that principal may legitimately do.
 
-*[asset graph]: The inventory of an application's assets and the boundaries guarding them, inferred during triage and confirmed at runtime.
-*[Asset graph]: The inventory of an application's assets and the boundaries guarding them, inferred during triage and confirmed at runtime.
+*[trust boundary]: The application-established separation guarding an asset from the baseline identity.
+*[Trust boundary]: The application-established separation guarding an asset from the baseline identity.
+*[trust boundaries]: The application-established separations guarding assets from the baseline identity; recorded as the challenge's inventory of what is protected and what is public.
+*[Trust boundaries]: The application-established separations guarding assets from the baseline identity; recorded as the challenge's inventory of what is protected and what is public.
 
 *[floor witness]: The advisory-backed path proving at least one objective is reachable at the pinned revision.
 *[Floor witness]: The advisory-backed path proving at least one objective is reachable at the pinned revision.
 
-*[functional core]: The minimum declared workflows a defense must preserve.
-*[Functional core]: The minimum declared workflows a defense must preserve.
+*[SLA]: The minimum declared workflows a defense must keep serving.
 
 *[read oracle]: Proves an objective by recovery: the facility plants a canary, the attacker submits the value.
 *[Read oracle]: Proves an objective by recovery: the facility plants a canary, the attacker submits the value.
@@ -36,8 +37,8 @@
 *[Observed oracle]: Proves an objective by observation: the facility issues a mark, the attacker places it in protected state, the facility observes it privileged-side.
 *[observed oracles]: Proves an objective by observation: the facility issues a mark, the attacker places it in protected state, the facility observes it privileged-side.
 
-*[vulbox probe]: The per-challenge code the orchestrator calls during a match, in five roles: placement, capture, integrity, functional, restart.
-*[Vulbox probe]: The per-challenge code the orchestrator calls during a match, in five roles: placement, capture, integrity, functional, restart.
+*[vulbox probe]: The per-challenge code the orchestrator calls during a match, in five roles: placement, capture, integrity, SLA, restart.
+*[Vulbox probe]: The per-challenge code the orchestrator calls during a match, in five roles: placement, capture, integrity, SLA, restart.
 
 *[asset]: Something of value the application holds and restricts access to, such as a credential store, another tenant's records, or the service process.
 *[Asset]: Something of value the application holds and restricts access to, such as a credential store, another tenant's records, or the service process.
@@ -90,13 +91,12 @@
 *[noise]: Data the checker creates and exercises for itself through the public surface — never scored, never seed data.
 *[Noise]: Data the checker creates and exercises for itself through the public surface — never scored, never seed data.
 
-*[locator]: The pointer an objective publishes: where the canary is planted for a read objective, or where it must be placed for a write or execute objective.
-*[Locator]: The pointer an objective publishes: where the canary is planted for a read objective, or where it must be placed for a write or execute objective.
+*[canary ID]: The pointer an objective publishes: where the canary is planted for a read objective, or where it must be placed for a write or execute objective.
+*[Canary ID]: The pointer an objective publishes: where the canary is planted for a read objective, or where it must be placed for a write or execute objective.
 *[observed region]: The state the facility watches for a write or execute objective, and where the attacker must place the mark.
 *[Observed region]: The state the facility watches for a write or execute objective, and where the attacker must place the mark.
 
 *[flag handler]: The per-challenge code that creates seed data and plants and rotates canaries in it, through application operations only.
 *[Flag handler]: The per-challenge code that creates seed data and plants and rotates canaries in it, through application operations only.
-*[deep checker]: The check that exercises the declared functional core and decides whether a defense is legitimate.
-*[Deep checker]: The check that exercises the declared functional core and decides whether a defense is legitimate.
+*[SLA checker]: The check that exercises the declared SLA and decides whether a defense is legitimate.
 *[match secret]: The facility-held key that seeds per-team derivation, so no team can derive another's layout.

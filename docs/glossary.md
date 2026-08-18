@@ -23,11 +23,11 @@ that is a defect in the code, not a second definition.
 |---|---|
 | **Runtime** | the pinned upstream application — its code, its authorization logic, and the default protection it gives each asset class — inherited, never authored. |
 | **Deployment** | the Dockerfile, entrypoint, and provisioning that stand the application up, running once at bring-up and allowed to change the application. |
-| **Vulbox probe** | the per-challenge code the orchestrator calls during a match, in five roles — placement, capture, integrity, functional, restart — which may change transient state but may not create or protect an asset. |
+| **Vulbox probe** | the per-challenge code the orchestrator calls during a match, in five roles — placement, capture, integrity, SLA, restart — which may change transient state but may not create or protect an asset. |
 | **Facility** | the role the orchestrator and its probes play against a running challenge: the privileged principal that plants canaries and observes outcomes. |
 | **Flag handler** | the per-challenge code that creates seed data and plants and rotates canaries in it, through application operations only. |
-| **Shallow probe** | the liveness check that establishes a service is reachable. |
-| **Deep checker** | the check that exercises the declared functional core and decides whether a defense is legitimate. |
+| **Liveness check** | the shallow probe that establishes a service is reachable. |
+| **SLA checker** | the check that exercises the declared SLA and decides whether a defense is legitimate. |
 | **Arm** | to prepare an observed region for the round, so that a mark placed in it can be observed. |
 
 ## Access layers
@@ -44,8 +44,7 @@ that is a defect in the code, not a second definition.
 |---|---|
 | **Application operation** | an action the application exposes at the public or guarded surface, never at infrastructure, where the application's own code decides where the data lands and what protects it. |
 | **Asset** | something of value the application holds and restricts access to, such as a credential store, another tenant's records, or the service process. |
-| **Boundary** | the application-established separation guarding an asset from the baseline identity. |
-| **Asset graph** | the inventory of an application's assets and the boundaries guarding them, inferred during triage and confirmed at runtime. |
+| **Trust boundary** | the application-established separation guarding an asset from the baseline identity; the recorded set of them is the challenge's inventory of what is protected and what is public, inferred during triage and confirmed at runtime. |
 | **Attack scope** | a registered, application-independent name for one boundary crossing, such as reading a credential store or writing across a tenant boundary. |
 | **Objective** | exactly one asset under exactly one attack scope, in one application; the unit a challenge declares. |
 | **Baseline identity** | the attacker's starting principal and everything that principal may legitimately do. |
@@ -60,7 +59,7 @@ that is a defect in the code, not a second definition.
 | **Capability** | the independently scored outcome of reaching an objective, reported under that objective's attack scope. |
 | **Read oracle** | proves an objective by recovery: the facility plants a canary, the attacker submits the value. |
 | **Observed oracle** | proves an objective by observation — the facility issues a mark, the attacker places it in protected state, and the facility observes it privileged-side — covering write and execution outcomes. |
-| **Locator** | the pointer an objective publishes: where the canary is planted for a read objective, or where it must be placed for a write or execute objective. |
+| **Canary ID** | the pointer an objective publishes: where the canary is planted for a read objective, or where it must be placed for a write or execute objective. Called `flag_id` in the orchestrator and `public_flag_id` in other attack/defense frameworks. |
 | **Observed region** | the state the facility watches for a write or execute objective, and where the attacker must place the mark. |
 
 ## Environment and defense
@@ -69,7 +68,7 @@ that is a defect in the code, not a second definition.
 |---|---|
 | **Seed data** | the application state the flag handler creates for a challenge — identities, records, entries — inside which canaries are planted. |
 | **Noise** | data the checker creates and exercises for itself through the public surface — never scored, never seed data, and re-created from any prior state. |
-| **Functional core** | the minimum declared workflows a defense must preserve. |
+| **SLA** | the minimum declared workflows a defense must keep serving; the standard attack/defense term for the service-availability contract. |
 
 ## Interpretation
 
