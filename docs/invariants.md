@@ -15,8 +15,9 @@ section is the contract.
 
 - **A1.** The application is a pinned upstream revision. Its runtime and
   authorization logic are inherited and never authored.
-- **A2.** A cell is exactly one asset combined with one registered attack
-  scope, in one application.
+- **A2.** A cell carries exactly one attack scope. One asset reachable under
+  two scopes is two cells, and one scope spanning several assets is not one
+  cell.
 - **A3.** A cell exists only when all three hold: the application holds the
   asset, the boundary guarding it was established by the application, and
   the application exposes a typed operation the facility can plant through.
