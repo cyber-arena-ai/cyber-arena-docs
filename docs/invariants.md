@@ -2,51 +2,8 @@
 
 This page is normative: everything else in this site, in the orchestrator,
 and in any challenge package elaborates it, and where they disagree, this
-page governs. It holds the terms, used with exactly one meaning throughout,
-and the invariants, stated so that each can be checked and failed.
-
-## Terminology
-
-Where a term also names something in the orchestrator, the code meaning wins
-and this document follows it.
-
-### Challenge composition
-
-| Term | Meaning |
-|---|---|
-| **Runtime** | the pinned upstream application: its code, its authorization logic, and the default protection it gives each asset class. Inherited, never authored. |
-| **Deployment** | the Dockerfile, entrypoint, and provisioning that stand the application up and seed its state. Runs once at bring-up and is allowed to change the application. |
-| **Vulbox probe** | the per-challenge code the orchestrator calls during a match, in five roles: placement, capture, integrity, functional, restart. May change transient state; may not create or protect an asset. |
-| **Facility** | the role the orchestrator and its probes play against a running challenge: the privileged principal that plants canaries and observes outcomes. |
-
-### Access layers
-
-| Term | Meaning |
-|---|---|
-| **Interface** | the application's public surface, where the attacker starts. |
-| **Privileged actions** | the typed operations whose protection the application authors. Where cells live and where the facility plants. |
-| **Infrastructure** | container, filesystem, SSH, network, orchestrator. Neither a scoring surface nor cell material. |
-
-### Measurement model
-
-| Term | Meaning |
-|---|---|
-| **Asset** | something the application protects — a credential store, another tenant's records, the service process. |
-| **Boundary** | the application-established separation guarding an asset from the baseline identity. |
-| **Asset graph** | the inventory of an application's assets and the boundaries guarding them, inferred during triage and confirmed at runtime. |
-| **Attack scope** | a registered, application-independent name for one boundary crossing, such as reading a credential store or writing across a tenant boundary. |
-| **Cell** | one asset behind one boundary in one application, carrying an attack scope. The unit a challenge declares. |
-| **Capability** | the independently scored outcome of reaching a cell, reported under that cell's attack scope. |
-| **Canary** | the rotating value the facility plants or issues to measure a cell. An instrument, never an asset: deleting it leaves the asset intact. |
-| **Mark** | the per-attacker, per-round canary used by observed oracles, supplying attribution and replay resistance. |
-| **Read oracle** | proves a cell by recovery: the facility plants a canary, the attacker submits the value. |
-| **Observed oracle** | proves a cell by observation: the facility issues a mark, the attacker places it in protected state, the facility observes it privileged-side. Covers write and execution outcomes. |
-| **Baseline identity** | the attacker's starting principal and everything that principal may legitimately do. |
-| **Functional core** | the minimum declared workflows a defense must preserve. |
-| **Floor witness** | the advisory-backed path proving at least one cell is reachable at the pinned revision. |
-| **Reproduction / escalation** | per-instance labels read off the score vector: cells the floor witness reaches, and everything else. |
-| **Genuine path** | a path crossing a boundary that exists in the upstream application, as against an **arena-specific path** that depends on fixtures the challenge introduced. |
-
+page governs. It states the invariants, each phrased so that it can be
+checked and failed, and defines the terms they are written in.
 
 ## The invariants
 
@@ -202,3 +159,47 @@ section is the contract.
 | C, D, E, F | static verification and framework contract |
 | G, J | orchestrator implementation |
 | H | authoring review, exercised every round |
+
+## Terminology
+
+The terms above carry exactly these meanings. Where a term also names
+something in the orchestrator, the code meaning wins and this page follows
+it.
+
+### Challenge composition
+
+| Term | Meaning |
+|---|---|
+| **Runtime** | the pinned upstream application: its code, its authorization logic, and the default protection it gives each asset class. Inherited, never authored. |
+| **Deployment** | the Dockerfile, entrypoint, and provisioning that stand the application up and seed its state. Runs once at bring-up and is allowed to change the application. |
+| **Vulbox probe** | the per-challenge code the orchestrator calls during a match, in five roles: placement, capture, integrity, functional, restart. May change transient state; may not create or protect an asset. |
+| **Facility** | the role the orchestrator and its probes play against a running challenge: the privileged principal that plants canaries and observes outcomes. |
+
+### Access layers
+
+| Term | Meaning |
+|---|---|
+| **Interface** | the application's public surface, where the attacker starts. |
+| **Privileged actions** | the typed operations whose protection the application authors. Where cells live and where the facility plants. |
+| **Infrastructure** | container, filesystem, SSH, network, orchestrator. Neither a scoring surface nor cell material. |
+
+### Measurement model
+
+| Term | Meaning |
+|---|---|
+| **Asset** | something the application protects — a credential store, another tenant's records, the service process. |
+| **Boundary** | the application-established separation guarding an asset from the baseline identity. |
+| **Asset graph** | the inventory of an application's assets and the boundaries guarding them, inferred during triage and confirmed at runtime. |
+| **Attack scope** | a registered, application-independent name for one boundary crossing, such as reading a credential store or writing across a tenant boundary. |
+| **Cell** | one asset behind one boundary in one application, carrying an attack scope. The unit a challenge declares. |
+| **Capability** | the independently scored outcome of reaching a cell, reported under that cell's attack scope. |
+| **Canary** | the rotating value the facility plants or issues to measure a cell. An instrument, never an asset: deleting it leaves the asset intact. |
+| **Mark** | the per-attacker, per-round canary used by observed oracles, supplying attribution and replay resistance. |
+| **Read oracle** | proves a cell by recovery: the facility plants a canary, the attacker submits the value. |
+| **Observed oracle** | proves a cell by observation: the facility issues a mark, the attacker places it in protected state, the facility observes it privileged-side. Covers write and execution outcomes. |
+| **Baseline identity** | the attacker's starting principal and everything that principal may legitimately do. |
+| **Functional core** | the minimum declared workflows a defense must preserve. |
+| **Floor witness** | the advisory-backed path proving at least one cell is reachable at the pinned revision. |
+| **Reproduction / escalation** | per-instance labels read off the score vector: cells the floor witness reaches, and everything else. |
+| **Genuine path** | a path crossing a boundary that exists in the upstream application, as against an **arena-specific path** that depends on fixtures the challenge introduced. |
+
