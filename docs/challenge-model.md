@@ -1,13 +1,13 @@
 # The challenge model
 
-This page is normative. Everything in this site, in the orchestrator, and in
-any challenge package elaborates it, and where they disagree, this page
+**Normative.** Everything in this site, in the orchestrator, and in any
+challenge package elaborates this page, and where they disagree, this page
 governs.
 
-It defines what a challenge *is*, in the order the definitions depend on
-each other. Each section states the model in prose and closes with the
-invariants that make it checkable. An invariant is written so that it can be
-failed: if you cannot say what evidence would violate it, it is not one.
+**How to read it.** Each section defines one part of the model in prose and
+closes with the invariants beneath it. The prose explains; the invariants are
+the foundation the explanation rests on, and each is written to be failed — if
+you cannot say what evidence would violate one, it is not an invariant.
 
 ---
 
@@ -15,33 +15,30 @@ failed: if you cannot say what evidence would violate it, it is not one.
 
 ### 1. What the benchmark measures
 
-Cyber Arena measures how far an agent advances along a general
-security-capability ladder against a realistic application. Scoring is
-defined over outcomes, not over paths: a challenge names the asset to reach
-and what counts as proof, never the route.
+**The claim.** Cyber Arena measures how far an agent advances along a general
+security-capability ladder against a realistic application. Scoring is defined
+over outcomes, not paths: a challenge names the asset to reach and what counts
+as proof, never the route.
 
-A challenge is an application and its security boundaries, not an exercise
-built around one CVE. A known vulnerability establishes that a historical
-revision is a viable target; it does not define the only valid path or
-the highest capability an agent may reach. A genuine vulnerability the author
-never anticipated scores exactly like the selected one.
+**A challenge is a target, not a puzzle.** It is an application and its
+security boundaries rather than an exercise built around one CVE — the known
+vulnerability proves the revision is viable, and a genuine vulnerability the
+author never anticipated scores exactly like it.
 
-Success is a concrete security effect — crossing an application boundary,
-acquiring authority, reaching protected state, controlling service
-execution. Those effects are named independently of the application, so
-results stay comparable across targets that expose different reachable
-subsets.
+**Effects, not defects.** Success is a concrete security effect — crossing a
+boundary, acquiring authority, reaching protected state, controlling execution
+— named independently of the application so results stay comparable across
+targets that expose different reachable subsets.
 
-The consequence is a **confirmed floor and an open ceiling**: curation proves
-at least one boundary can be crossed, and evaluation stays free to reveal
-stronger capabilities as models improve.
+**Confirmed floor, open ceiling.** Curation proves at least one boundary can be
+crossed; evaluation stays free to reveal stronger capabilities as models
+improve.
 
-This section carries no invariants. It is the premise the rest serves.
+**No invariants here.** This section is the premise the rest serves.
 
 ### 2. Challenge anatomy
 
-A challenge is a pinned application revision together with five things
-measured against it:
+**A challenge is a pinned application revision plus five measured components.**
 
 | Component | What it fixes |
 |---|---|
@@ -51,20 +48,20 @@ measured against it:
 | **Functional core** | the minimum workflows a defense must preserve |
 | **Floor witness** | the advisory-backed path proving at least one objective is reachable |
 
-Objectives are defined against the asset graph and never against the
-vulnerability. The floor witness proves the objective set is non-empty; it
-does not bound it.
+**Objectives come from the asset graph, never the vulnerability.** The floor
+witness proves the objective set is non-empty; it does not bound it.
 
-The application itself is inherited, not built. Its authorization logic and
-the default protection it gives each asset class come from upstream, because
-a boundary the challenge invented measures the challenge rather than the
-software. Participants get its source; only the seeded state and the canaries
-inside it are withheld.
+**The application is inherited, not built.** Its authorization logic and the
+default protection it gives each asset class come from upstream, because a
+boundary the challenge invented measures the challenge rather than the
+software.
 
-It is also stateful, and both parties hold enough access to damage it.
-Damage inside the box carries no signature — an attacker with execution and a
-defender rebuilding an image leave identical evidence — so the facility never
-assumes a clean box.
+**Participants get the source.** Only the seeded state and the canaries inside
+it are withheld.
+
+**The box is never assumed clean.** The application is stateful and both
+parties can damage it, and damage carries no signature — an attacker with
+execution and a defender rebuilding an image leave identical evidence.
 
 !!! abstract "Invariants"
 
@@ -77,9 +74,9 @@ assumes a clean box.
 
 ### 3. Attack surface
 
-The running challenge reads as three access layers. They are authority tiers
-over the same channels, not separate channels, and each participant enters at
-exactly one of them.
+**Three access layers, one entry point each.** They are authority tiers over
+the same channels rather than separate channels, and each participant acts at
+exactly one.
 
 | Layer | Who acts there | Rule |
 |---|---|---|
@@ -89,9 +86,8 @@ exactly one of them.
 
 #### Public surface
 
-Everything the application offers the baseline identity. A baseline session
-is part of the public surface rather than past it: legitimate reach is the
-starting position, not a first success.
+**Everything the application offers the baseline identity.** A baseline session
+is the starting position, not a first success.
 
 - The service ports declared public, and the protocols served on them.
 - Every endpoint, view, and static asset reachable there without authentication.
@@ -109,10 +105,10 @@ starting position, not a first success.
 
 #### Guarded surface
 
-Everything the application exposes but gates behind authority it enforces
-itself. Protection the application **established** belongs here even when the
-operating system enforces it — establishment, not enforcement mechanism, is
-what makes a boundary the application's own.
+**Everything the application gates behind authority it enforces itself.**
+Protection the application *established* belongs here even when the operating
+system enforces it — establishment, not enforcement mechanism, is what makes a
+boundary the application's own.
 
 - Administrative and owner-only operations: user and role management, system
   configuration, extension or plugin installation.
@@ -139,8 +135,8 @@ protection the application itself established.*
 
 #### Infrastructure
 
-Everything present in every challenge regardless of which application is
-deployed.
+**Everything present in every challenge regardless of which application is
+deployed.**
 
 - The container, its image wrapper, its entrypoint, and its lifecycle.
 - Privileged shell access to the box and the transport carrying it.
@@ -159,14 +155,13 @@ deployed.
 
 *Test: it would still be there if a different application were deployed.*
 
-That test settles the case that otherwise looks ambiguous. A directory mode is
-infrastructure when the challenge set it and guarded surface when the
-application set it, because only the second survives replacing the
-application.
+**That test settles the ambiguous case.** A directory mode is infrastructure
+when the challenge set it and guarded surface when the application set it,
+because only the second survives replacing the application.
 
-The rule cuts symmetrically, and the symmetry is the point: the attacker may
-not score through infrastructure, and the author may not build an objective
-out of it. Infrastructure is the stage, not the play.
+**The rule cuts both ways, and the symmetry is the point.** The attacker may
+not score through infrastructure and the author may not build an objective out
+of it: infrastructure is the stage, not the play.
 
 !!! abstract "Invariants"
 
@@ -178,22 +173,23 @@ out of it. Infrastructure is the stage, not the play.
 
 ### 4. Adversary model
 
-Every objective's existence test is stated relative to the baseline identity,
-so that identity must be fixed before any objective can be.
+**The baseline identity is fixed before any objective can be.** Every
+objective's existence test is stated relative to it.
 
-It is the trust boundary of a normal user: the principal a legitimate
-deployment hands to someone with no special standing. It is defined **per
-challenge**, because what counts as a normal user differs by application — an
-anonymous visitor for a public service, a registered account for a
-collaboration tool, a member of one project for a multi-tenant system. The
-arena fixes only that the definition exists, is written down, and is
+**It is the trust boundary of a normal user** — the principal a legitimate
+deployment hands to someone with no special standing.
+
+**It is defined per challenge.** What counts as a normal user differs by
+application: an anonymous visitor for a public service, a registered account
+for a collaboration tool, a member of one project for a multi-tenant system.
+The arena fixes only that the definition exists, is written down, and is
 identical for every attacker.
 
-Two things follow. Everything within that identity's legitimate reach is
-public surface, so no objective may sit inside it. And every capability is
-measured as a **distance** from it, which is what lets applications with
-different notions of a normal user still produce comparable results: the scope
-names the crossing, the baseline names where the crossing starts.
+**Two consequences follow.** Everything within that identity's legitimate reach
+is public surface, so no objective may sit inside it; and every capability is
+measured as a distance from it, which is what makes applications with different
+notions of a normal user comparable — the scope names the crossing, the
+baseline names where the crossing starts.
 
 !!! abstract "Invariants"
 
@@ -202,30 +198,34 @@ names the crossing, the baseline names where the crossing starts.
 
 ### 5. Targets
 
-An **asset** is something of value the application holds and restricts access
-to. A **boundary** is the application-established separation guarding it. The
-**asset graph** is the inventory of both.
+**Assets, boundaries, and the graph.** An asset is something of value the
+application holds and restricts access to; a boundary is the
+application-established separation guarding it; the asset graph is the
+inventory of both.
 
-The graph is not reliably extractable by tooling — principals, protected
-assets, and enforced boundaries are expressed differently across frameworks,
-and the boundary that matters is often a convention rather than a construct.
-It is therefore a reviewer's inference during static triage, recorded as an
-explicit hypothesis with its evidence, then confirmed at runtime before
-authoring. Confirmation establishes three things: each proposed objective has
-a real plantable location in the running service, the baseline identity cannot
-reach its canary through the legitimate workflow, and an objective excluded on
-paper is genuinely absent rather than merely unexamined.
+**The graph is inferred, not extracted.** Principals, protected assets, and
+enforced boundaries are expressed differently across frameworks, and the
+boundary that matters is often a convention rather than a construct, so the
+graph is a reviewer's hypothesis during static triage, recorded with its
+evidence.
 
-Inference is cheap and sometimes wrong, so it should be broad; confirmation is
-expensive and decisive, so it should prune. Authoring inherits only confirmed
-objectives.
+**Runtime confirmation prunes it.** Confirmation establishes that each proposed
+objective has a real plantable location, that the baseline identity cannot
+reach its canary through the legitimate workflow, and that an objective
+excluded on paper is genuinely absent rather than merely unexamined.
+
+**Broad inference, decisive confirmation.** Inference is cheap and sometimes
+wrong; confirmation is expensive and settles it. Authoring inherits only
+confirmed objectives.
 
 #### Objectives follow the assets
 
-An **objective** is exactly one asset under exactly one **attack scope**, in
-one application. The scope registry is already keyed by asset, so placement is
-a join between the application's inventory and the registry rather than a
-judgment about the vulnerability.
+**An objective is exactly one asset under exactly one attack scope, in one
+application.**
+
+**Placement is a join, not a judgment.** The scope registry is keyed by asset,
+so objectives fall out of the application's inventory rather than out of the
+vulnerability.
 
 | Asset present in the application | Registered scopes |
 |---|---|
@@ -237,18 +237,18 @@ judgment about the vulnerability.
 | Object or blob storage | `storage.private_object.read` |
 | The service process itself | `host.command.execute` |
 
-Every asset class the application exposes is either assigned its objectives or
-explicitly excluded with a recorded reason, so a thin objective set is a
-stated decision rather than an oversight.
+**Silence is not an option.** Every asset class the application exposes is
+either assigned its objectives or excluded with a recorded reason, so a thin
+objective set is a stated decision rather than an oversight.
 
 #### The challenge declares objectives, not flags
 
-Version 1 declared flags — capture-the-flag objects whose only meaning is
-possession. Version 2 declares objectives, and the canary is demoted to the
-instrument that measures one.
+**Version 1 declared flags; version 2 declares objectives.** A flag is a
+capture-the-flag object whose only meaning is possession, and the canary is now
+demoted to the instrument that measures an objective.
 
-That changes what the declaration must say. It is an attack surface, not a
-list of prizes, so each declared objective names:
+**The declaration is an attack surface, not a prize list.** Each declared
+objective names:
 
 - **The asset**, in the application's own vocabulary.
 - **The attack scope** it carries, drawn from the registry.
@@ -258,19 +258,20 @@ list of prizes, so each declared objective names:
   observed region for a write or execute objective.
 - **Its capture state** per victim, so an agent can tell what remains.
 
-An agent reading that declaration should be able to answer *what am I trying
-to reach, and what will count as proof*, without being told any chain to it.
+**The test of a good declaration.** An agent reading it can answer *what am I
+trying to reach, and what will count as proof*, without being told any chain to
+it.
 
-Disclosure follows one line: **disclose the objective, never the store.** The
-asset, its scope, and its oracle kind are public, because measuring how far an
-agent climbs is inconsistent with making it guess where to look. The storage
-schema, the surrounding seeded population, and the vulnerability that reaches
-it are not.
+**Disclose the objective, never the store.** The asset, its scope, and its
+oracle kind are public, because measuring how far an agent climbs is
+inconsistent with making it guess where to look; the storage schema, the
+surrounding seeded population, and the vulnerability that reaches it are not.
 
-An objective proves a capability was reached — never the chain that reached
-it, and never a defect. Capability implication is expected: an attacker who
-reaches an execute objective may collect a read objective in the same step.
-That is the shape of a ladder, not a flaw in one.
+**An objective proves a capability, not a defect and not a chain.**
+
+**Implication between objectives is expected.** An attacker who reaches an
+execute objective may collect a read objective in the same step, which is the
+shape of a ladder rather than a flaw in one.
 
 !!! abstract "Invariants"
 
@@ -288,12 +289,12 @@ That is the shape of a ladder, not a flaw in one.
 
 ### 6. Evidence
 
-A **canary** is the fresh value that proves one objective in one round. It is
+**A canary is the fresh value that proves one objective in one round.** It is
 an instrument, never an asset: delete it and the credential store is still a
 protected store that can no longer be measured; delete the seeded credential
 entry and there was nothing there to protect.
 
-The three outcome families do not share one mechanism.
+**The three outcome families do not share one mechanism.**
 
 | Outcome | Oracle | How it proves |
 |---|---|---|
@@ -301,23 +302,24 @@ The three outcome families do not share one mechanism.
 | Write | **observed oracle** | the facility issues a **mark**; the attacker places it in protected state; the facility observes it privileged-side |
 | Execute | **observed oracle** | same, with the observed region reachable *only* by execution |
 
-Read and observed oracles are duals and do not unify. Read hides a value the
-attacker must find; observed publishes a value to one attacker, who must place
-it where only a crossed boundary allows. They share a result vocabulary so
-scoring treats them alike, and share nothing else.
+**Read and observed oracles are duals and do not unify.** Read hides a value
+the attacker must find; observed publishes a value to one attacker who must
+place it where only a crossed boundary allows. They share a result vocabulary
+and nothing else.
 
-A write outcome cannot be proven by recovery. A planted value that no longer
-matches carries no attribution and already signals defender damage. An execute
-outcome cannot be proven by a region a file write also reaches — that is a
-second write objective wearing an execution label.
+**A write outcome cannot be proven by recovery.** A planted value that no
+longer matches carries no attribution and already signals defender damage.
+
+**An execute outcome cannot be proven by a writable region.** A region a file
+write also reaches is a second write objective wearing an execution label.
 
 #### Rotation
 
-Rotation is not a property of one oracle. Every path needs a fresh canary each
-round; the paths differ only in who supplies it. A read objective re-plants; an
-observed objective gets the property free from issuance.
+**Rotation binds every path, not one oracle.** Each round needs a fresh canary;
+the paths differ only in who supplies it — a read objective re-plants, an
+observed objective gets it free from issuance.
 
-Evidence varies along four axes, and the first three bind every path.
+**Evidence varies along four axes, and the first three bind every path.**
 
 | Axis | Required | Purpose |
 |---|---|---|
@@ -326,45 +328,43 @@ Evidence varies along four axes, and the first three bind every path.
 | Victim | yes | evidence from one box does not score against another |
 | Attacker | observed oracles only | a mark identifies who placed it |
 
-The missing attacker axis is the read oracle's known weakness: one planted
-value serves every attacker of that victim, so two teams that both recover it
-are indistinguishable and one may hand it to the other. Rotation bounds that
-window to a single round rather than closing it. The asymmetry is accepted
-rather than concealed — observed objectives attribute, read objectives do not.
+**The read oracle cannot attribute.** One planted value serves every attacker
+of that victim, so two teams that both recover it are indistinguishable and one
+may hand it to the other. Rotation bounds that window to a single round rather
+than closing it, and the asymmetry is accepted rather than concealed.
 
 #### The locator
 
-Every objective publishes a **locator**. For a read objective it names where
-the canary sits; for write and execute it names the **observed region**.
+**Every objective publishes a locator** — where the canary sits for a read
+objective, or the observed region for write and execute.
 
-The necessity is asymmetric. On the read side the locator is a fairness
-choice — withhold it and the attacker burns effort on enumeration instead of
+**Its necessity is asymmetric.** On the read side it is a fairness choice:
+withhold it and the attacker burns effort on enumeration instead of
 exploitation, but the objective stays well-defined. On the observed side it is
-**mandatory**: the facility watches exactly one region, so an attacker who
-achieves arbitrary write and places the mark elsewhere demonstrated the
-capability and scores nothing. Without a published region the objective is not
-hard, it is undefined.
+mandatory, because the facility watches exactly one region and an attacker who
+achieves arbitrary write but places the mark elsewhere scores nothing.
 
-Publishing a region creates its own risk — it is a single hardening target. A
-defender who learns it can make that one region unwritable, preserve the
-functional core, and block the objective without touching the vulnerability.
-Two things prevent that. The region must be an asset whose write path the
-functional core *requires*, so locking it breaks the core; and the region is
-disclosed only to attackers and anchored in the victim's seed data, so a
-defender cannot read its own region off another team's disclosure.
+**A published region is a single hardening target.** A defender who learns it
+can make that one region unwritable, preserve the functional core, and block
+the objective without touching the vulnerability.
 
-Anchoring is what makes non-disclosure meaningful at all. Every defender is
-also an attacker: if regions were structurally identical across teams, one
-disclosure would reveal them all.
+**Two things prevent that.** The region must be an asset whose write path the
+functional core requires, so locking it breaks the core; and it is disclosed
+only to attackers and anchored in the victim's seed data.
 
-Non-disclosure buys time rather than certainty — a defender with root can
-observe the facility's capture and locate the region. **Rotating the observed
-region** across rounds raises that cost further, and it is worth doing only
-when the candidate family spans the whole asset class. A region cycling through
-three fixed records is worthless: the defender locks three records and
-preserves the core. A region drawn uniformly from the seeded population forces
-the defender to lock the class, which the functional core forbids. It stays an
-optional per-challenge technique rather than an invariant.
+**Anchoring is what makes non-disclosure mean anything.** Every defender is
+also an attacker, so structurally identical regions would let one disclosure
+reveal them all.
+
+**Non-disclosure buys time, not certainty.** A defender with root can observe
+the facility's capture and locate the region.
+
+**Rotating the observed region raises that cost, but only if the family spans
+the asset class.** A region cycling through three fixed records is worthless —
+the defender locks three records and preserves the core; a region drawn
+uniformly from the seeded population forces locking the whole class, which the
+functional core forbids. It stays an optional per-challenge technique rather
+than an invariant.
 
 !!! abstract "Invariants"
 
@@ -387,8 +387,8 @@ optional per-challenge technique rather than an invariant.
 
 ### 7. Environment
 
-An application in this arena is a runtime plus data, and the data has three
-suppliers whose separation determines whether an objective is sound.
+**An application here is a runtime plus data, and the data has three
+suppliers.** Their separation is what makes an objective sound.
 
 | Supplied | By | Rotates |
 |---|---|---|
@@ -396,32 +396,34 @@ suppliers whose separation determines whether an objective is sound.
 | **Seed data** — identities, records, jobs, credential entries | the flag handler | no |
 | Canaries and marks | the orchestrator, per round | yes |
 
-Seed data is not decoration: it is what makes an asset *instance* exist. It is
-also where objectives are most easily invalidated, because the author who can
-create an asset cannot create its protection.
+**Seed data is what makes an asset instance exist.** It is also where
+objectives are most easily invalidated, because the author who can create an
+asset cannot create its protection.
 
-The flag handler owns it, because the population and the canary inside it are
-one concern — the code that plants a canary into a credential entry is the code
-that must know the entry exists. It creates the population on first placement
-and reconciles it every round after, so a wipe is repaired rather than fatal.
+**The flag handler owns it.** The population and the canary inside it are one
+concern: the code that plants a canary into a credential entry is the code that
+must know the entry exists. It creates the population on first placement and
+reconciles it every round after, so a wipe is repaired rather than fatal.
 
 #### Seed data defeats rehearsal, not replay
 
-Every team runs the same image and holds root on its own box. If the seeded
-layer were identical across teams, an attacker would read its own copy to learn
-which record, which principal, and which entry hold the opponent's canary, and
-rehearse the entire chain offline against a perfect replica.
+**Identical layouts would hand the attacker a replica.** Every team runs the
+same image and holds root on its own box, so an attacker would read its own
+copy to learn which record, principal, and entry hold the opponent's canary,
+then rehearse the entire chain offline.
 
-Varying it is therefore a **victim-axis** property addressing rehearsal, where
-canary rotation is a **round-axis** property addressing replay. It also
-dissolves the singleton-asset problem: an application has one credential store,
-but the challenge populates it, so which entry under which identity holds the
-canary still differs per team. The asset is fixed by the application; its
-contents are ours.
+**Two axes, two threats.** Varying seed data is a victim-axis property
+addressing rehearsal; rotating canaries is a round-axis property addressing
+replay.
 
-The layout is identical in every round. Convergence needs a fixed target, and
-reseeding would buy nothing — the victim axis already denies rehearsal and the
-round axis already denies replay.
+**It also dissolves the singleton-asset problem.** An application has one
+credential store, but the challenge populates it, so which entry under which
+identity holds the canary still differs per team — the asset is fixed by the
+application, its contents are ours.
+
+**The layout is identical in every round.** Convergence needs a fixed target,
+and reseeding would buy nothing since the victim axis already denies rehearsal
+and the round axis already denies replay.
 
 #### Seeding is deterministic
 
@@ -435,9 +437,9 @@ round axis already denies replay.
 - **Determinism covers layout, not canaries.** Layout is deterministic and
   static; canaries are fresh randomness rotating each round.
 
-The payoff is recoverability rather than reproducibility. Derived state can be
-rebuilt from the seed at any time, so losing it is an inconvenience rather than
-a catastrophe, and destroying it is not a winning move for either party.
+**The payoff is recoverability, not reproducibility.** Derived state can be
+rebuilt from the seed at any time, so destroying it is not a winning move for
+either party.
 
 !!! abstract "Invariants"
 
@@ -447,64 +449,67 @@ a catastrophe, and destroying it is not a winning move for either party.
 
 ### 8. Facility conduct
 
-The **facility** is the role the orchestrator and its probes play against a
-running challenge: the privileged principal. It is not a black-box client — it
-plants the credential as the administrator who owns the credential store, and
-observes the mark as root on the victim's box. A facility that could plant
-*without* authority would be describing an objective the attacker already holds.
+**The facility is the privileged principal** — the role the orchestrator and
+its probes play against a running challenge.
 
-The constraint is therefore on **how** it plants, not on how much authority it
-has: through the operation the application exposes for that asset class, at the
+**It is not a black-box client.** It plants the credential as the administrator
+who owns the credential store and observes the mark as root on the victim's
+box; a facility that could plant *without* authority would be describing an
+objective the attacker already holds.
+
+**The constraint is on how it plants, not how much authority it has** —
+through the operation the application exposes for that asset class, at the
 privilege that operation requires.
 
 #### Boundaries are inherited, not authored
 
-Adding a credential through the application's credential API and writing the
-same bytes into its secrets directory as root reach the same on-disk state, but
-only the first is an objective. In the second, the path, the mode, and the
-protection were chosen by the challenge, so the attacker's target is the
-challenge's file placement rather than the application's credential subsystem.
+**Same bytes, different objective.** Adding a credential through the
+application's API and writing it into the secrets directory as root reach the
+same on-disk state, but only the first is an objective: in the second the path,
+the mode, and the protection were chosen by the challenge, so the attacker's
+target is our file placement rather than the application's credential
+subsystem.
 
-One question decides it: **after planting, did the challenge have to add any
-protection itself?** If it chmods, chowns, or picks the directory, the challenge
-is the mechanism. If it hands the application a typed object and the application
-stores it where it stores those, the application is.
+**One question decides it: after planting, did the challenge have to add any
+protection itself?** If it chmods, chowns, or picks the directory, the
+challenge is the mechanism; if it hands the application a typed object and the
+application stores it where it stores those, the application is.
 
-The line is application code against challenge code, not remote against local.
-An initialization script running inside the service and calling the
-application's own object model is application mechanism; a request to an
-endpoint that writes a file the challenge named is not.
+**The line is application code against challenge code, not remote against
+local.** An initialization script inside the service calling the application's
+own object model is application mechanism; a request to an endpoint that writes
+a file the challenge named is not.
 
-Packaging routinely collapses separations the application relies on: a component
-upstream runs on its own host arrives as another account in one container. The
-tempting move is to rebuild the lost separation and call it restoration. That
-splits into two unlike cases:
+**Packaging collapses separations, and rebuilding them is not restoration.** A
+component that upstream runs on its own host arrives as another account in one
+container, and the two cases that follow are not alike.
 
-- Where the separation is expressible in the **application's own
-  configuration** — a grant, a role, an ACL, a visibility setting — nothing was
-  lost. Configuration is written by the author but in the application's
-  vocabulary, so the boundary is established by the application wherever it runs.
-- Where it exists **only as deployment topology** — separate hosts, separate
-  accounts, network isolation — there is nothing to inherit. In the deployed
-  configuration the application establishes no boundary there, so no objective
-  exists. Adding one means inventing protection.
+**Expressible in the application's own configuration — nothing was lost.** A
+grant, role, ACL, or visibility setting is written by the author but in the
+application's vocabulary, so the boundary is established by the application
+wherever it runs.
 
-The tell is mechanical: **protection an objective depends on that appears in the
-challenge's provisioning and nowhere upstream is authored.** A `chmod`, `chown`,
-`setfacl`, or tightened `umask` touching an objective's asset is the signature.
+**Existing only as deployment topology — nothing to inherit.** Separate hosts,
+separate accounts, network isolation: in the deployed configuration the
+application establishes no boundary there, so no objective exists and adding
+one means inventing protection.
 
-Assets protected by topology alone therefore yield no objectives under
-one-container packaging. That is a stated limitation, not a defect to work
-around: the contest is against the application, and the packaging is ours.
+**The tell is mechanical.** Protection an objective depends on that appears in
+the challenge's provisioning and nowhere upstream is authored, and a `chmod`,
+`chown`, `setfacl`, or tightened `umask` touching an objective's asset is the
+signature.
 
-An asset with no application operation for planting is likewise not a packaging
-problem. It is evidence the application does not treat that asset as protected,
-and the objective does not exist.
+**Topology-only assets therefore yield no objectives under one-container
+packaging.** That is a stated limitation rather than a defect to work around:
+the contest is against the application, and the packaging is ours.
+
+**No planting operation means no objective.** An asset the application exposes
+no operation for is evidence the application does not treat it as protected.
 
 #### Probe roles
 
-Probes are organized by what they do to the box and whom they measure, because
-that is what determines the rules each obeys.
+**Probes are organized by whom they measure, because that determines the rules
+each obeys.**
 
 | Role | Measures | Layer it may use | Why |
 |---|---|---|---|
@@ -514,42 +519,44 @@ that is what determines the rules each obeys.
 | **Functional** | the defender | the public surface only | it measures whether the service still serves users |
 | **Restart** | nothing; it is an action | infrastructure | it acts on the box rather than measuring it |
 
-The two ends of that table invert, which is the part worth stating plainly.
-Placement stays inside the application because it *establishes* protection.
-Capture leaves the application precisely because the application surface is
-defender-controlled — an observed oracle that asked the service whether a mark
-had landed would let a defender answer on its behalf. Where capture reads at the
-infrastructure layer it must read the representation the application itself
-treats as authoritative, never a shadow copy the challenge maintains.
+**The two ends of that table invert.** Placement stays inside the application
+because it *establishes* protection; capture leaves it precisely because the
+application surface is defender-controlled, and an observed oracle that asked
+the service whether a mark had landed would let a defender answer on its
+behalf.
 
-**Capture and integrity face opposite parties** and must stay separately
-expressible even when one read answers both. A defender who deletes a canary and
-an attacker who never found one produce the same missing value and must not
-produce the same verdict.
+**Capture at the infrastructure layer must still read the authoritative
+representation**, never a shadow copy the challenge maintains.
 
-A probe may create the state an objective needs, through the application's own
-mechanism. It may never add protection to it. Creating is allowed because
-placement owns the seed data; protecting is not, because protection is
-inherited. The line still bites elsewhere — a restart path that writes a
-protected baseline for a later functional comparison has crossed it, since the
-challenge chose that file and that mode.
+**Capture and integrity face opposite parties and must stay separately
+expressible.** A defender who deletes a canary and an attacker who never found
+one produce the same missing value and must not produce the same verdict.
+
+**A probe may create the state an objective needs; it may never protect it.**
+Creating is allowed because placement owns the seed data; protecting is not,
+because protection is inherited.
+
+**The line bites elsewhere too.** A restart path that writes a protected
+baseline for a later functional comparison has crossed it, since the challenge
+chose that file and that mode.
 
 #### Placement converges
 
-Idempotence is not enough. Running twice without extra harm says nothing about
-running against a box whose state has been mangled.
+**Idempotence is not enough.** Running twice without extra harm says nothing
+about running against a box whose state has been mangled.
 
 > Placement is **convergent**: run from any prior state — missing, duplicated,
 > corrupted, re-permissioned, half-deleted — it lands on the declared state.
 
-This is a desired-state contract. The handler declares what the context should
-be and reconciles toward it rather than assuming what it will find.
-Reconciliation runs through the application's own mechanism like every other
-placement action, so removing entries that should not exist means using the
-application's interface rather than resetting a volume. That is real authoring
-work and it is the price of the statefulness assumption.
+**This is a desired-state contract.** The handler declares what the context
+should be and reconciles toward it rather than assuming what it will find.
 
-Round ordering is part of the contract, not an implementation detail:
+**Reconciliation runs through the application's own mechanism**, so removing
+entries that should not exist means using the application's interface rather
+than resetting a volume — real authoring work, and the price of the
+statefulness assumption.
+
+**Round ordering is part of the contract, not an implementation detail.**
 
 1. **Observe integrity**, before anything is repaired. Reconciliation that runs
    first silently erases the tampering signal it was meant to detect.
@@ -557,36 +564,35 @@ Round ordering is part of the contract, not an implementation detail:
 3. **Rotate the canary** into the reconciled context.
 4. **Arm the observed regions** for the round.
 
-A convergence failure is a **defender-fault signal**. A healthy application
+**A convergence failure is a defender-fault signal.** A healthy application
 always accepts the facility's privileged writes, so reconciliation that cannot
-complete means the application is broken or its privileged interface has been
-amputated. Both are the defender's account rather than an infrastructure error,
-which closes a cheat: a defender who breaks the administrative interface to
-prevent planting would otherwise look like a flaky box.
+complete means the application is broken or its privileged interface amputated
+— both the defender's account, which closes the cheat of breaking the
+administrative interface to look like a flaky box.
 
 #### What is scored and what is restored
 
-Four assumptions follow from statefulness, chosen so that most damage needs no
-attribution at all.
+**Four assumptions follow from statefulness, chosen so that most damage needs
+no attribution at all.**
 
 1. **All evidence is facility-owned.** Canaries and seed data sit inside the box
-   but belong to neither team. Damage is a measurement problem before it is a
-   game event.
+   but belong to neither team, so damage is a measurement problem before it is
+   a game event.
 2. **Derivable state is restored, never scored.** The context follows from the
-   seed, so the facility re-derives it. Nobody is charged, because nobody has to
-   be identified.
+   seed, so the facility re-derives it and nobody has to be identified.
 3. **Non-derivable state is scored.** A canary is fresh randomness and cannot be
-   reconstructed once destroyed, so its integrity is measured and its loss is
-   charged. This is the only place attribution is needed.
+   reconstructed once destroyed, so its loss is charged — the only place
+   attribution is needed.
 4. **Non-derivable state is therefore minimal.** Every precious value is a
    potential dispute; one canary per objective and nothing else.
 
-Durable state a later round depends on belongs to deployment, never to a probe.
+**Durable state a later round depends on belongs to deployment, never to a
+probe.**
 
-One residual is accepted rather than solved. An attacker who destroys a canary
-instead of taking it forfeits its own capture, so the behaviour is
-self-defeating; what remains is sabotage to deny other attackers, which matters
-in a many-team game and is marginal in a benchmark.
+**One residual is accepted rather than solved.** An attacker who destroys a
+canary instead of taking it forfeits its own capture, so what remains is
+sabotage to deny other attackers — real in a many-team game, marginal in a
+benchmark.
 
 !!! abstract "Invariants"
 
@@ -607,31 +613,30 @@ in a many-team game and is marginal in a benchmark.
 
 ### 9. Record
 
-Every probe is three-valued. A capture attempt can succeed, fail, or be
-impossible to evaluate; an integrity read can find a canary intact, damaged, or
-unreadable; a functional check can pass, fail, or not complete. The design must
-say what an inconclusive measurement means, because the record it feeds is
-two-valued unless something forces otherwise.
+**Every probe is three-valued.** A capture can succeed, fail, or be impossible
+to evaluate; an integrity read can find a canary intact, damaged, or
+unreadable; a functional check can pass, fail, or not complete.
 
-The answer is that **the orchestrator instruments rather than judges**. A match
-produces a log of what was observed, including what could not be determined.
-Scores are computed from that log afterwards, so no component decides a verdict
-during the match.
+**The orchestrator instruments rather than judges.** A match produces a log of
+what was observed, including what could not be determined, and scores are
+computed from that log afterwards.
 
-Retry is the only exception, because it is the only response that cannot be
+**Retry is the only exception**, because it is the only response that cannot be
 reconstructed later: a claim has to be re-observed while its round is still
-live. Everything else — whether an unreadable canary counts as tampering,
-whether an unreachable box costs availability, how a blocked facility channel is
-treated — is a reading of the log rather than a decision taken in the moment.
+live.
 
-Availability is therefore **telemetry, not a penalty**. The poller samples, the
-samples are recorded with their outcomes, and any definition of uptime is
-computed later. A defender who keeps the service running but blocks the
-facility's privileged channel is recorded as its own event kind.
+**Everything else is a reading of the log** — whether an unreadable canary
+counts as tampering, whether an unreachable box costs availability, how a
+blocked facility channel is treated.
 
-This moves the burden from deciding correctly to **recording sufficiently**. A
-log entry reading `not captured` where the truth was `box unreachable` destroys
-a distinction no later analysis can recover, so every record carries its reason:
+**Availability is telemetry, not a penalty.** The poller samples, samples are
+recorded with their outcomes, and any definition of uptime is computed later; a
+defender who keeps the service running but blocks the facility's privileged
+channel is recorded as its own event kind.
+
+**The burden moves from deciding correctly to recording sufficiently.** A log
+entry reading `not captured` where the truth was `box unreachable` destroys a
+distinction no later analysis can recover, so every record carries its reason:
 
 - the objective, the attacker, the victim, the round, and the time;
 - the outcome and the reason behind it — reached, not reached, no longer
@@ -640,16 +645,16 @@ a distinction no later analysis can recover, so every record carries its reason:
 - for a retried claim, how many attempts were made;
 - for a repaired context, that repair occurred and what it replaced.
 
-Three distinctions the record must preserve, because scoring may want either
-reading:
+**Three distinctions the record must preserve**, because scoring may want
+either reading:
 
 - an objective reached **this** round against one retained from an earlier round;
 - an objective **never reached** against one a defender legitimately hardened out
   of existence;
 - a defender's **damage** to a canary against a box that could not be read.
 
-Evidence must stay outside the agent's reach and outside the mutable
-application. No capability is creditable from evidence either party can read,
+**Evidence stays outside the agent's reach and outside the mutable
+application.** No capability is creditable from evidence either party can read,
 forge, or replay, and none from a single memorized constant.
 
 !!! abstract "Invariants"
@@ -667,68 +672,71 @@ forge, or replay, and none from a single memorized constant.
 
 ### 10. Defense
 
-A defense must be a security change rather than a service degradation. The
-functionality check is what separates the two, so its design is a scoring
-decision and not an operational health concern.
+**A defense must be a security change, not a service degradation.** The
+functionality check is what separates them, which makes its design a scoring
+decision rather than an operational health concern.
 
-The check is also **the whole of the defender's rulebook**. The defender holds
-root on its own box and may change the application however it likes; the design
-deliberately does not enumerate permitted edits. It declares the minimum
-workflows that must survive — the **functional core** — and any change
-preserving them is legitimate regardless of how it works. This keeps the
-defensive side open in the same way the offensive side is: as an unanticipated
-genuine attack chain scores, an unanticipated genuine hardening counts.
+**The check is the whole of the defender's rulebook.** The defender holds root
+and may change the application however it likes, so the design declares the
+minimum workflows that must survive — the functional core — and any change
+preserving them is legitimate regardless of how it works.
 
-Checking happens at two levels. A shallow probe establishes the service is alive
-and reachable. A **deep checker** exercises the declared behavior and is the
-level that decides whether a defense is legitimate. It runs outside the
-defender's editable surface — over the network from the poller, never from a
-script shipped inside the box it judges — so a defense cannot rewrite the check
-that grades it.
+**That keeps both sides open symmetrically.** As an unanticipated genuine
+attack chain scores, an unanticipated genuine hardening counts.
 
-Coverage is per-chain: the deep checker covers the features on every materially
+**Two levels of checking.** A shallow probe establishes the service is alive; a
+deep checker exercises the declared behavior and is the level that decides
+whether a defense is legitimate.
+
+**The deep checker runs outside the defender's editable surface** — over the
+network from the poller, never from a script shipped inside the box it judges —
+so a defense cannot rewrite the check that grades it.
+
+**Coverage is per-chain.** The checker covers the features on every materially
 distinct objective-reaching chain known at authoring time, using the smallest
 workflow that exercises each feature's real semantics rather than the smallest
-workflow overall. A checker covering only the originally selected chain would let
-a defender amputate the feature carrying a different genuine scoring path and
-still pass.
+workflow overall.
+
+**Covering only the selected chain would be a hole.** A defender could amputate
+the feature carrying a different genuine scoring path and still pass.
 
 #### Noise
 
-The checker exercises the core with **noise** — data it creates for itself
-through the public surface, never scored and never seed data. Three things
-follow.
+**The checker exercises the core with noise** — data it creates for itself
+through the public surface, never scored and never seed data.
 
-Coupling the check to seed data would create an incentive unrelated to
-capability: trash the victim's records, cost them availability, capture nothing.
-That rewards vandalism over exploitation. Noise removes the incentive entirely.
+**Coupling the check to seed data would reward vandalism.** Trash the victim's
+records, cost them availability, capture nothing; noise removes the incentive
+entirely.
 
-Noise is also what makes the checker **hard to recognize**. A checker that
+**Noise is also what makes the checker hard to recognize.** A checker that
 repeatedly exercises the same seeded records is maximally distinguishable — a
 defender allowlists those identities and passes every check while the
-application is dead for everyone else. Randomized *inputs* defend against a
-fixed transcript; only self-created participants defend against a fixed
-identity.
+application is dead for everyone else.
 
-Noise inherits the surrounding rules rather than restating them: it is created
-through the public surface, re-created from any prior state, and transient, so
-it is restored and never scored.
+**Randomized inputs defend against a fixed transcript; self-created
+participants defend against a fixed identity.**
 
-Runs are randomized and assert semantic outcomes — a round trip that creates its
-own participants and then asserts who may and may not observe the result
-distinguishes a working application from a canned imitation, where a fixed
-request compared against a fixed response does not. Randomization is repeated
-rather than single-shot; the orchestrator supplies the runs, and reading a
-defense as functional only when repeated runs all pass is one interpretation of
-that record.
+**Noise inherits the surrounding rules rather than restating them.** It is
+created through the public surface, re-created from any prior state, and
+transient, so it is restored and never scored.
 
-The checker is bound by a **two-sided** constraint. Feature amputation and canned
-responses must fail it, and an equivalent narrow hardening must pass it. A
-checker that rejects both is coupled to the implementation rather than the
-declared behavior, and fails as a checker even though it looks strict.
+**Runs are randomized and assert semantic outcomes.** A round trip that creates
+its own participants and then asserts who may and may not observe the result
+distinguishes a working application from a canned imitation; a fixed request
+compared against a fixed response does not.
 
-Chains discovered after authoring are not covered by construction. That residual
-is accepted; no finite check proves every scoring route is protected.
+**Randomization is repeated, not single-shot.** The orchestrator supplies the
+runs, and reading a defense as functional only when repeated runs all pass is
+one interpretation of that record.
+
+**The checker is two-sided.** Feature amputation and canned responses must fail
+it and an equivalent narrow hardening must pass it — a checker that rejects
+both is coupled to the implementation rather than the declared behavior, and
+fails as a checker even though it looks strict.
+
+**Chains discovered after authoring are uncovered by construction.** That
+residual is accepted; no finite check proves every scoring route is protected.
 
 !!! abstract "Invariants"
 
@@ -748,17 +756,23 @@ is accepted; no finite check proves every scoring route is protected.
 
 ### 11. Arena integrity
 
-The model above assumes a match that behaves. These are the guarantees that make
-it so — properties of the orchestrator rather than of any challenge.
+**The model above assumes a match that behaves.** These are properties of the
+orchestrator rather than of any challenge.
 
-Teams reach each other only where the challenge says they may. The facility's
-own channel belongs to neither party's surface, so a defender cannot win by
-blocking it and an attacker cannot score through it. Facility state lives
-outside the boxes, because evidence derivable from the box it measures is not
-evidence. Phases, tooling, and the defense edit path are orchestrator-mediated,
-so what a participant may do at any moment is bounded and observable. Every team
-gets the same image, limits, and schedule. And when the orchestrator itself
-fails, that is recorded as an orchestrator fault rather than charged to a team.
+**Reach is bounded.** Teams reach each other only where the challenge says they
+may, and the facility's own channel belongs to neither party's surface, so a
+defender cannot win by blocking it and an attacker cannot score through it.
+
+**Evidence lives outside the box it measures**, because evidence derivable from
+that box is not evidence.
+
+**Participation is mediated.** Phases, tooling, and the defense edit path are
+orchestrator-owned, so what a participant may do at any moment is bounded and
+observable.
+
+**Conditions are equal and faults are attributed honestly.** Every team gets
+the same image, limits, and schedule, and when the orchestrator itself fails
+that is recorded as an orchestrator fault rather than charged to a team.
 
 !!! abstract "Invariants"
 
@@ -781,24 +795,27 @@ fails, that is recorded as an orchestrator fault rather than charged to a team.
 
 ### 12. Interpretation
 
-Results are recorded as raw per-objective capability records — which objective,
-which attacker, which victim, which round — rather than as a score. Aggregation
-weighting, per-round versus per-match credit, and any interaction with
-availability are left open deliberately, because a raw record can be turned into
-any of those later while a score cannot be turned back.
+**Results are raw records, not scores** — which objective, which attacker,
+which victim, which round.
 
-The selected vulnerability's impact identifies which objectives its floor
-witness reaches. Those are labeled **reproduction** for that instance; every
-other captured objective is **escalation**. The label is per-instance metadata
-rather than a property of the objective or its scope, so the same scope is
-reproduction in one challenge and escalation in another.
+**Aggregation is deliberately left open.** Weighting, per-round versus
+per-match credit, and any interaction with availability are decided later,
+because a raw record can be turned into any of those while a score cannot be
+turned back.
 
-Because any genuine vulnerability may score, whether the agent used the
-originally selected one cannot be the cheat test. The distinction that matters
-is whether the successful path crossed a boundary that exists in the upstream
-application or one that exists only because the arena built the box. The asset
-graph is the written referent for that judgment, which is why recording it during
-curation serves both objective placement and later cheat review.
+**Reproduction and escalation are labels, not properties.** The floor witness's
+reach defines which objectives count as reproduction for that instance and
+everything else captured is escalation, so the same scope is reproduction in
+one challenge and escalation in another.
+
+**The cheat test is not whether the agent used the selected vulnerability.**
+Because any genuine vulnerability may score, the question is whether the
+successful path crossed a boundary that exists in the upstream application or
+one that exists only because the arena built the box.
+
+**The asset graph is the written referent for that judgment**, which is why
+recording it during curation serves both objective placement and later cheat
+review.
 
 !!! abstract "Invariants"
 
@@ -820,8 +837,9 @@ curation serves both objective placement and later cheat review.
 | F, I | orchestrator implementation |
 | G | authoring review, exercised every round |
 
-Amend this page deliberately and never in passing. A change here invalidates
-conclusions reached under the old wording, so an amendment carries the reasoning
-for the change and an assessment of what it breaks. Identifiers are referenced
-from the orchestrator and from review checklists: retire one in place rather
-than reusing it.
+**Amend deliberately and never in passing.** A change here invalidates
+conclusions reached under the old wording, so an amendment carries the
+reasoning for the change and an assessment of what it breaks.
+
+**Identifiers are stable.** They are referenced from the orchestrator and from
+review checklists: retire one in place rather than reusing it.
