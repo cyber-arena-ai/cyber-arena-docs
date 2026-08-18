@@ -16,9 +16,10 @@ section is the contract.
 - **A1.** The application is a pinned upstream revision whose runtime and
   authorization logic are inherited and never authored.
 
-- **A2.** An objective exists only when all three hold: the application holds the
-  asset, the boundary guarding it was established by the application, and
-  the application exposes a typed operation the facility can plant through.
+- **A2.** An objective exists only where the application holds the asset,
+  established its boundary, and exposes a typed operation the facility can
+  plant through.
+
 - **A3.** No objective lies within the baseline identity's legitimate reach.
 - **A4.** Every asset class the application exposes is either assigned its
   objectives or excluded with a recorded reason.
