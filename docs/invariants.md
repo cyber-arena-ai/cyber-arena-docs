@@ -27,7 +27,8 @@ section is the contract.
   application, never the path that reached it.
 
 - **A5.** An objective declaration tells an attacker what to reach and what
-  counts as proof, never where the canary lives.
+  counts as proof.
+
 
 
 
