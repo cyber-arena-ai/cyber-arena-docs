@@ -32,7 +32,7 @@ section is the contract.
 
 
 
-### B. Baseline identity
+### B. Trust boundary
 
 - **B1.** Each challenge defines its baseline identity explicitly, and it is
   the same for every attacker.

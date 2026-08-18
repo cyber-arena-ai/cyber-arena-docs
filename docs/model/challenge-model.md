@@ -31,7 +31,7 @@ user is differs by application — an anonymous visitor for a public service,
 a registered account for a collaboration tool, a member of one project for a
 multi-tenant system. The arena fixes only that the definition exists, is
 written down, and is the same for every attacker
-([B1](../invariants.md#b-baseline-identity)).
+([B1](../invariants.md#b-trust-boundary)).
 
 Two things follow. Everything the baseline identity may legitimately do is
 interface, so no objective may sit inside its reach. And every capability is
