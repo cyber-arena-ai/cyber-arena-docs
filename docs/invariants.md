@@ -24,6 +24,8 @@ section is the contract.
 - **A5.** An objective may be a read, write, or execute operation.
 - **A6.** The application is stateful, and the facility assumes its state is
   dirty.
+- **A7.** Every participant has white-box access to the application's source;
+  only seed data and canaries are withheld.
 
 
 ### B. Trust boundary
