@@ -43,8 +43,8 @@ section is the contract.
   the current round's material may be credited.
 - **C2.** Material differs per round, per objective, and per victim, and observed
   material additionally differs per attacker.
-- **C3.** Read canaries are unpredictable: drawn randomly, never derived
-  from round, team, or objective identifiers.
+- **C3.** A canary is computable only by reaching its objective.
+
 - **C4.** An execution objective's observed region is reachable only by
   execution.
 - **C5.** No capability is credited from an availability, crash, or liveness
@@ -65,8 +65,8 @@ section is the contract.
 
 - **E1.** Placement acts only through the application's own mechanism, at
   the privilege that mechanism requires.
-- **E2.** After planting, the challenge has added no protection of its own;
-  if it set the location, the mode, or the ownership, the objective is invalid.
+- **E2.** An objective's protection is established by the application alone.
+
 - **E3.** Capture reads from a vantage neither party controls, and reads the
   representation the application itself treats as authoritative.
 - **E4.** Functional checks use only the application's user-facing
