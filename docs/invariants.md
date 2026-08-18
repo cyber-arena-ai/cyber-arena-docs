@@ -15,9 +15,9 @@ section is the contract.
 
 - **A1.** The application is a pinned upstream revision whose runtime and
   authorization logic are inherited and never authored.
-- **A2.** An objective carries exactly one attack scope: one asset reachable under
-  two scopes is two objectives, and one scope spanning several assets is not one
-  objective.
+- **A2.** An objective covers exactly one asset under exactly one attack
+  scope.
+
 - **A3.** An objective exists only when all three hold: the application holds the
   asset, the boundary guarding it was established by the application, and
   the application exposes a typed operation the facility can plant through.
