@@ -48,8 +48,9 @@ section is the contract.
 
 - **D1.** The seeded population is a pure function of a per-team seed.
 - **D2.** No team can derive another team's seeded population.
-- **D3.** Seeding runs once per team at bring-up, and the layout is static
-  across rounds.
+- **D3.** The flag handler creates the seeded population, and its layout is
+  identical in every round.
+
 
 ### E. Facility conduct
 
@@ -60,15 +61,14 @@ section is the contract.
   neither party controls.
 - **E4.** Functional checks act only through the application's user-facing
   interface.
-- **E5.** A probe changes only transient state; durable state belongs to
-  deployment.
-- **E6.** Placement is convergent: from any prior state it lands on the
+
+- **E5.** Placement is convergent: from any prior state it lands on the
   declared state.
-- **E7.** The round proceeds in one order — observe integrity, converge
+- **E6.** The round proceeds in one order — observe integrity, converge
   context, rotate canaries, arm observed regions.
-- **E8.** Derivable state is restored and never scored, while non-derivable
+- **E7.** Derivable state is restored and never scored, while non-derivable
   state is scored and kept to one canary per objective.
-- **E9.** Restart is idempotent: repeated restarts converge on the same
+- **E8.** Restart is idempotent: repeated restarts converge on the same
   serving state.
 
 ### F. Recording

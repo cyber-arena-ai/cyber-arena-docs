@@ -40,7 +40,7 @@ than it returns.
 Idempotence is not enough. Running twice without extra harm says nothing
 about running against a box whose state has been mangled.
 
-> Placement must be **convergent** ([E6](../invariants.md#e-facility-conduct)):
+> Placement must be **convergent** ([E5](../invariants.md#e-facility-conduct)):
 > run from any prior state — missing, duplicated, corrupted, re-permissioned,
 > half-deleted — it lands on the declared state.
 

@@ -60,7 +60,7 @@ check that an amputated service still passes.
 
 A probe cannot be required to leave the application untouched, because a
 functional probe must exercise it, and exercising a real application changes
-state. The rule is narrower ([E5](../invariants.md#e-facility-conduct)):
+state. The rule is narrower ([E2](../invariants.md#e-facility-conduct)):
 
 > A probe may change transient state. It may not create an asset or add
 > protection to one.
