@@ -20,13 +20,11 @@ section is the contract.
   established its boundary, and exposes a typed operation the facility can
   plant through.
 
-- **A3.** No objective lies within the baseline identity's legitimate reach.
 
-
-- **A4.** An objective proves a security capability was reached against the
+- **A3.** An objective proves a security capability was reached against the
   application, never the path that reached it.
 
-- **A5.** An objective declaration tells an attacker what to reach and what
+- **A4.** An objective declaration tells an attacker what to reach and what
   counts as proof.
 
 
@@ -34,10 +32,9 @@ section is the contract.
 
 ### B. Trust boundary
 
-- **B1.** Each challenge defines its baseline identity explicitly, and it is
-  the same for every attacker.
-- **B2.** Everything within that identity's legitimate reach is interface,
-  and reaching it is not a capability.
+- **B1.** Every attacker starts from the same declared baseline identity.
+- **B2.** Every objective lies outside the baseline identity's boundary.
+
 
 ### C. Proof material
 
