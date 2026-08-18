@@ -86,3 +86,6 @@
 *[Public surface]: Everything the application offers the baseline identity, where the attacker starts.
 *[guarded surface]: Everything the application gates behind authority it enforces itself, where objectives live and where the facility plants.
 *[Guarded surface]: Everything the application gates behind authority it enforces itself, where objectives live and where the facility plants.
+
+*[noise]: Data the checker creates and exercises for itself through the public surface — never scored, never seed data.
+*[Noise]: Data the checker creates and exercises for itself through the public surface — never scored, never seed data.

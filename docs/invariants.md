@@ -88,11 +88,15 @@ section is the contract.
   rulebook, so any change preserving it is a legitimate defense.
 - **G2.** The deep checker covers the features on every materially distinct
   objective-reaching chain known at authoring time.
-- **G3.** Each run is randomized, provisions its own participants, and
-  asserts semantic outcomes rather than fixed strings.
+- **G3.** Every check run uses fresh inputs and asserts semantic outcomes
+  rather than fixed responses.
 - **G4.** The checker is two-sided: amputation and canned responses fail it,
   and an equivalent narrow hardening passes it.
 - **G5.** The checker runs outside the defender's editable surface.
+- **G6.** The checker exercises the functional core with noise it creates
+  itself, never with seed data.
+- **G7.** The checker is not trivially distinguishable from a legitimate
+  user, so no defense can pass by recognizing it.
 
 ### H. Interpretation
 
@@ -175,6 +179,7 @@ it.
 | **Observed oracle** | proves an objective by observation — the facility issues a mark, the attacker places it in protected state, and the facility observes it privileged-side — covering write and execution outcomes. |
 | **Baseline identity** | the attacker's starting principal and everything that principal may legitimately do. |
 | **Functional core** | the minimum declared workflows a defense must preserve. |
+| **Noise** | data the checker creates and exercises for itself through the public surface — never scored, never seed data, and re-created from any prior state. |
 | **Floor witness** | the advisory-backed path proving at least one objective is reachable at the pinned revision. |
 | **Reproduction / escalation** | per-instance labels read off the score vector: objectives the floor witness reaches, and everything else. |
 | **Genuine path** | a path crossing a boundary that exists in the upstream application, as against an **arena-specific path** that depends on fixtures the challenge introduced. |
