@@ -1,0 +1,69 @@
+site_name: Cyber Arena
+site_description: Challenge design for the Cyber Arena attack/defense benchmark
+site_url: https://cyber-arena-ai.github.io/docs/
+repo_url: https://github.com/cyber-arena-ai/docs
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - content.code.copy
+    - toc.follow
+    - search.suggest
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue grey
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue grey
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+nav:
+  - Overview: index.md
+  - Constitution: constitution.md
+  - Model:
+      - The challenge model: model/challenge-model.md
+      - Three layers: model/layers.md
+      - Capability cells: model/cells.md
+      - Rotation and seeded context: model/rotation.md
+      - State and measurement: model/state.md
+      - Reproduction and escalation: model/results.md
+  - Runtime:
+      - Probes and lifecycle hooks: runtime/probes.md
+      - Functionality checks: runtime/functionality-checks.md
+  - Authoring:
+      - Establishing the asset graph: authoring/asset-graph.md
+      - Judging candidate promise: authoring/judging-promise.md
+      - Inherited boundaries: authoring/boundaries.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/cyber-arena-ai
