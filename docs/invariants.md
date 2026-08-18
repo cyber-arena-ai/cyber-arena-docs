@@ -35,9 +35,9 @@ section is the contract.
 - **C1.** Every round issues a fresh canary for each objective.
 - **C2.** Only the current round's canary may be credited.
 
-- **C3.** Canaries and marks are unguessable and unforgeable.
+- **C3.** A canary is unguessable and unforgeable.
 
-- **C4.** An observed capture identifies the attacker that produced it.
+- **C4.** An issued canary identifies the attacker it was issued to.
 - **C5.** An execute objective's observed region is reachable only by
   execution, not by writing.
 
@@ -165,8 +165,8 @@ it.
 | **Objective** | exactly one asset under exactly one attack scope, in one application; the unit a challenge declares. |
 | **Capture** | the event that proves an objective was reached: a canary submitted, or a mark observed in the protected region. |
 | **Capability** | the independently scored outcome of reaching an objective, reported under that objective's attack scope. |
-| **Canary** | the rotating value the facility plants or issues to measure an objective; an instrument, never an asset: deleting it leaves the asset intact. |
-| **Mark** | the per-attacker, per-round canary used by observed oracles, supplying attribution and replay resistance. |
+| **Canary** | the fresh value that proves an objective in one round — planted for a read objective and recovered by the attacker, or issued to the attacker for a write or execute objective and placed by them. |
+| **Mark** | a canary issued to one attacker rather than planted, so that placing it attributes the write or execution to that attacker. |
 | **Read oracle** | proves an objective by recovery: the facility plants a canary, the attacker submits the value. |
 | **Observed oracle** | proves an objective by observation — the facility issues a mark, the attacker places it in protected state, and the facility observes it privileged-side — covering write and execution outcomes. |
 | **Baseline identity** | the attacker's starting principal and everything that principal may legitimately do. |
