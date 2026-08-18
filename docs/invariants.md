@@ -54,7 +54,7 @@ section is the contract.
 
 ### E. Facility conduct
 
-- **E1.** The flag handler seeds and plants only through the application's own
+- **E1.** The flag handler seeds and plants only through application
   operations.
 
 - **E2.** An objective's protection is established by the application alone.
@@ -158,6 +158,7 @@ it.
 
 | Term | Meaning |
 |---|---|
+| **Application operation** | an action the application itself exposes for an asset class — its API, CLI, or object model — where the application's own code decides where the data lands and what protects it. |
 | **Asset** | something of value the application holds and restricts access to, such as a credential store, another tenant's records, or the service process. |
 | **Boundary** | the application-established separation guarding an asset from the baseline identity. |
 | **Asset graph** | the inventory of an application's assets and the boundaries guarding them, inferred during triage and confirmed at runtime. |

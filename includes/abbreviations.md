@@ -81,3 +81,7 @@
 
 *[seed data]: The application state the flag handler creates for a challenge — identities, records, entries — inside which canaries are planted.
 *[Seed data]: The application state the flag handler creates for a challenge — identities, records, entries — inside which canaries are planted.
+
+*[application operation]: An action the application itself exposes for an asset class — its API, CLI, or object model — where the application's own code decides where the data lands and what protects it.
+*[application operations]: An action the application itself exposes for an asset class — its API, CLI, or object model — where the application's own code decides where the data lands and what protects it.
+*[Application operation]: An action the application itself exposes for an asset class — its API, CLI, or object model — where the application's own code decides where the data lands and what protects it.
