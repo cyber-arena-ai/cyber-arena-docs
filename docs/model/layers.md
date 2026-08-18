@@ -8,8 +8,8 @@ layer carries a single rule.
 | Layer | Who acts there | Rule |
 |---|---|---|
 | **Interface** | the attacker starts here | public surface; holds no secrets and assumes no good faith |
-| **Privileged actions** | the facility acts here by right; the attacker must arrive here | typed operations whose protection the application authors — cells live here |
-| **Infrastructure** | orchestration: container, filesystem, SSH, network | neither a scoring surface nor cell material |
+| **Privileged actions** | the facility acts here by right; the attacker must arrive here | typed operations whose protection the application authors — objectives live here |
+| **Infrastructure** | orchestration: container, filesystem, SSH, network | neither a scoring surface nor objective material |
 
 ## What each layer contains
 
@@ -31,7 +31,7 @@ legitimate reach is the starting position, not a first success.
 - Banners, version strings, error text, and any other output the
   application emits to unprivileged callers.
 - Whatever the challenge hands the attacker at start: the service address,
-  the target list, the published cell names, and the baseline credentials.
+  the target list, the published objective names, and the baseline credentials.
 
 *Test: reachable using only the rights the baseline identity already holds.*
 
@@ -100,17 +100,17 @@ because only the second survives replacing the application.
 
 The infrastructure rule cuts symmetrically, and that symmetry is the point.
 The attacker may not score through challenge infrastructure, and the author
-may not build a cell out of it. Infrastructure is the stage rather than the
+may not build an objective out of it. Infrastructure is the stage rather than the
 play.
 
-A cell is then the gap between what the facility holds by right and what the
+An objective is then the gap between what the facility holds by right and what the
 attacker starts with. That gap is asymmetric by construction, and the
 asymmetry is the challenge.
 
 ## Who supplies the data
 
 An application in this arena is a runtime plus data, and the data has three
-suppliers whose separation determines whether a cell is sound.
+suppliers whose separation determines whether an objective is sound.
 
 | Supplied | By | Rotates |
 |---|---|---|
@@ -119,11 +119,11 @@ suppliers whose separation determines whether a cell is sound.
 | Canaries and marks | the orchestrator, per round | yes |
 
 Author-supplied state is not decoration: it is what makes an asset instance
-exist at all. It is also the layer where cells are most easily invalidated,
+exist at all. It is also the layer where objectives are most easily invalidated,
 because the author who can create an asset cannot create its protection.
 
 The orchestrator's contribution is separate in kind. A canary or mark is a
-**canary** measuring a cell rather than an asset, which is why it rotates
+**canary** measuring an objective rather than an asset, which is why it rotates
 while the asset does not. The test is deletion: remove the canary and the
 credential store is still a protected store that can no longer be measured;
 remove the seeded credential entry and there is nothing there to protect.
@@ -133,7 +133,7 @@ remove the seeded credential entry and there is nothing there to protect.
 The facility is not a black-box client. It is the **privileged principal** —
 it plants the credential as the administrator who owns the credential store,
 and it observes the mark as root on the victim's box. A facility that could
-plant without authority would describe a cell the attacker already holds.
+plant without authority would describe an objective the attacker already holds.
 
 The constraint is therefore on how it plants rather than on how much
 authority it has ([E1](../invariants.md#e-layers)):
@@ -143,7 +143,7 @@ authority it has ([E1](../invariants.md#e-layers)):
 
 Adding a credential through the application's credential API and writing the
 same bytes into its secrets directory as root reach the same on-disk state,
-but only the first is a cell. In the second, the path, the mode, and the
+but only the first is an objective. In the second, the path, the mode, and the
 protection were all chosen by the challenge, so the attacker's target is the
 challenge's file placement rather than the application's credential
 subsystem.
@@ -161,7 +161,7 @@ endpoint that writes a file the challenge named is not.
 
 An asset with no such operation is not a packaging problem to work around.
 It is evidence that the application does not treat that asset as protected,
-and the cell does not exist.
+and the objective does not exist.
 
 ## Plant at layer two, observe from layer three, attack from layer one
 

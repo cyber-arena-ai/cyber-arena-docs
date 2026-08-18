@@ -11,26 +11,26 @@ Everything the rest of this site argues for reduces to the properties below.
 The Model, Orchestration, and Authoring pages give the reasoning; this
 section is the contract.
 
-### A. Application and cells
+### A. Application and objectives
 
 - **A1.** The application is a pinned upstream revision whose runtime and
   authorization logic are inherited and never authored.
-- **A2.** A cell carries exactly one attack scope: one asset reachable under
-  two scopes is two cells, and one scope spanning several assets is not one
-  cell.
-- **A3.** A cell exists only when all three hold: the application holds the
+- **A2.** An objective carries exactly one attack scope: one asset reachable under
+  two scopes is two objectives, and one scope spanning several assets is not one
+  objective.
+- **A3.** An objective exists only when all three hold: the application holds the
   asset, the boundary guarding it was established by the application, and
   the application exposes a typed operation the facility can plant through.
-- **A4.** No cell lies within the baseline identity's legitimate reach.
+- **A4.** No objective lies within the baseline identity's legitimate reach.
 - **A5.** Every asset class the application exposes is either assigned its
-  cells or excluded with a recorded reason.
-- **A6.** No cell's proof material is contained in or derived from another
-  cell's.
-- **A7.** Cells are derived from the asset graph and never from the
+  objectives or excluded with a recorded reason.
+- **A6.** No objective's proof material is contained in or derived from another
+  objective's.
+- **A7.** Objectives are derived from the asset graph and never from the
   vulnerability.
-- **A8.** A cell declaration names the asset, its attack scope, its oracle
+- **A8.** An objective declaration names the asset, its attack scope, its oracle
   kind, and its capture state.
-- **A9.** A cell declaration never names the store.
+- **A9.** An objective declaration never names the store.
 
 ### B. Baseline identity
 
@@ -41,13 +41,13 @@ section is the contract.
 
 ### C. Proof material
 
-- **C1.** Every round issues fresh proof material for every cell, and only
+- **C1.** Every round issues fresh proof material for every objective, and only
   the current round's material may be credited.
-- **C2.** Material differs per round, per cell, and per victim, and observed
+- **C2.** Material differs per round, per objective, and per victim, and observed
   material additionally differs per attacker.
 - **C3.** Read canaries are unpredictable: drawn randomly, never derived
-  from round, team, or cell identifiers.
-- **C4.** An execution cell's observed region is reachable only by
+  from round, team, or objective identifiers.
+- **C4.** An execution objective's observed region is reachable only by
   execution.
 - **C5.** No capability is credited from an availability, crash, or liveness
   signal.
@@ -68,13 +68,13 @@ section is the contract.
 - **E1.** Placement acts only through the application's own mechanism, at
   the privilege that mechanism requires.
 - **E2.** After planting, the challenge has added no protection of its own;
-  if it set the location, the mode, or the ownership, the cell is invalid.
+  if it set the location, the mode, or the ownership, the objective is invalid.
 - **E3.** Capture reads from a vantage neither party controls, and reads the
   representation the application itself treats as authoritative.
 - **E4.** Functional checks use only the application's user-facing
   interface.
-- **E5.** Infrastructure is neither a scoring surface nor cell material.
-- **E6.** Protection a cell depends on that appears in the challenge's
+- **E5.** Infrastructure is neither a scoring surface nor objective material.
+- **E6.** Protection an objective depends on that appears in the challenge's
   provisioning and nowhere upstream is authored.
 - **E7.** Separation that exists only as deployment topology cannot be
   rebuilt inside the box.
@@ -90,7 +90,7 @@ section is the contract.
 - **F4.** Durable state that a later round depends on belongs to deployment,
   never to a probe.
 - **F5.** Derivable state is restored and never scored, while non-derivable
-  state is scored and is therefore kept to one canary per cell.
+  state is scored and is therefore kept to one canary per objective.
 
 ### G. Measurement and recording
 
@@ -115,7 +115,7 @@ section is the contract.
 - **H1.** The declared functional core is the whole of the defender's
   rulebook, so any change preserving it is a legitimate defense.
 - **H2.** The deep checker covers the features on every materially distinct
-  cell-reaching chain known at authoring time.
+  objective-reaching chain known at authoring time.
 - **H3.** Each run is randomized and provisions its own participants, and
   asserts semantic outcomes rather than fixed strings.
 - **H4.** The checker is two-sided: amputation and canned responses fail it,
@@ -124,10 +124,10 @@ section is the contract.
 
 ### I. Floor and interpretation
 
-- **I1.** The floor witness proves at least one cell is reachable at the
-  pinned revision but does not define the cell set.
+- **I1.** The floor witness proves at least one objective is reachable at the
+  pinned revision but does not define the objective set.
 - **I2.** Reproduction and escalation are per-instance labels read off the
-  record after the fact, not properties of a cell or a scope.
+  record after the fact, not properties of an objective or a scope.
 - **I3.** Whether a path is genuine or arena-specific is judged against the
   recorded asset graph.
 
@@ -184,8 +184,8 @@ it.
 | Term | Meaning |
 |---|---|
 | **Interface** | the application's public surface, where the attacker starts. |
-| **Privileged actions** | the typed operations whose protection the application authors, where cells live and where the facility plants. |
-| **Infrastructure** | container, filesystem, SSH, network, orchestrator — neither a scoring surface nor cell material. |
+| **Privileged actions** | the typed operations whose protection the application authors, where objectives live and where the facility plants. |
+| **Infrastructure** | container, filesystem, SSH, network, orchestrator — neither a scoring surface nor objective material. |
 
 ### Measurement model
 
@@ -195,15 +195,15 @@ it.
 | **Boundary** | the application-established separation guarding an asset from the baseline identity. |
 | **Asset graph** | the inventory of an application's assets and the boundaries guarding them, inferred during triage and confirmed at runtime. |
 | **Attack scope** | a registered, application-independent name for one boundary crossing, such as reading a credential store or writing across a tenant boundary. |
-| **Cell** | one asset behind one boundary in one application, carrying an attack scope, and the unit a challenge declares. |
-| **Capability** | the independently scored outcome of reaching a cell, reported under that cell's attack scope. |
-| **Canary** | the rotating value the facility plants or issues to measure a cell; an instrument, never an asset: deleting it leaves the asset intact. |
+| **Objective** | one asset behind one boundary in one application, carrying an attack scope, and the unit a challenge declares. |
+| **Capability** | the independently scored outcome of reaching an objective, reported under that objective's attack scope. |
+| **Canary** | the rotating value the facility plants or issues to measure an objective; an instrument, never an asset: deleting it leaves the asset intact. |
 | **Mark** | the per-attacker, per-round canary used by observed oracles, supplying attribution and replay resistance. |
-| **Read oracle** | proves a cell by recovery: the facility plants a canary, the attacker submits the value. |
-| **Observed oracle** | proves a cell by observation — the facility issues a mark, the attacker places it in protected state, and the facility observes it privileged-side — covering write and execution outcomes. |
+| **Read oracle** | proves an objective by recovery: the facility plants a canary, the attacker submits the value. |
+| **Observed oracle** | proves an objective by observation — the facility issues a mark, the attacker places it in protected state, and the facility observes it privileged-side — covering write and execution outcomes. |
 | **Baseline identity** | the attacker's starting principal and everything that principal may legitimately do. |
 | **Functional core** | the minimum declared workflows a defense must preserve. |
-| **Floor witness** | the advisory-backed path proving at least one cell is reachable at the pinned revision. |
-| **Reproduction / escalation** | per-instance labels read off the score vector: cells the floor witness reaches, and everything else. |
+| **Floor witness** | the advisory-backed path proving at least one objective is reachable at the pinned revision. |
+| **Reproduction / escalation** | per-instance labels read off the score vector: objectives the floor witness reaches, and everything else. |
 | **Genuine path** | a path crossing a boundary that exists in the upstream application, as against an **arena-specific path** that depends on fixtures the challenge introduced. |
 

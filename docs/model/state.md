@@ -21,7 +21,7 @@ attribution at all.
    cannot be reconstructed once destroyed, so its integrity is measured and
    its loss is charged. This is the only place attribution is needed.
 4. **Non-derivable state is therefore kept minimal.** Every precious value
-   is a potential dispute; one canary per cell and nothing else.
+   is a potential dispute; one canary per objective and nothing else.
 
 Availability follows from the same design without extra rules. The
 functional check provisions its own participants, so a defender's
@@ -103,7 +103,7 @@ A log entry reading `not captured` where the truth was `box unreachable`
 destroys a distinction no later analysis can recover, so every record
 carries its reason:
 
-- the cell, the attacker, the victim, the round, and the time.
+- the objective, the attacker, the victim, the round, and the time.
 - the outcome, and the reason behind it — reached, not reached, not
   reachable any longer, or not measurable.
 - for an inconclusive result, which probe could not decide and what
@@ -112,8 +112,8 @@ carries its reason:
 - for a repaired context, that repair occurred and what it replaced.
 
 Distinctions the record must preserve because scoring may want either
-reading: a cell reached this round against one retained from an earlier
-round, a cell never reached against one a defender legitimately hardened out
+reading: an objective reached this round against one retained from an earlier
+round, an objective never reached against one a defender legitimately hardened out
 of existence, and a defender's damage to a canary against a box that could
 not be read.
 

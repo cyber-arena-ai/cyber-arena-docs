@@ -5,7 +5,7 @@
 The [infrastructure rule](../model/layers.md#infrastructure) constrains the
 attacker: a capture may not be scored through challenge infrastructure. The
 same principle constrains the author, and the second half is easier to miss.
-Where the [layer model](../model/layers.md) says how a sound cell is built,
+Where the [layer model](../model/layers.md) says how a sound objective is built,
 this page says what invalidates one. The contest is against the application,
 so the application must be both what is attacked and what defends.
 
@@ -16,17 +16,17 @@ author, but in the application's own vocabulary. Its **data** — identities,
 records, secrets, artifacts — is written by the author outright.
 
 Authoring the data is expected; every challenge seeds its own. What
-invalidates a cell is authoring the *protection*:
+invalidates an objective is authoring the *protection*:
 
 > Provisioning may create assets. It must not create the protection that
-> makes an asset a cell. If the challenge package is what stops the baseline
-> identity, the cell measures the package rather than the application.
+> makes an asset an objective. If the challenge package is what stops the baseline
+> identity, the objective measures the package rather than the application.
 
 Establishment is the test, not the enforcement mechanism. An application
 that creates its own secrets directory restricted to its own account has
 established that boundary even though the operating system enforces it, and
-a cell behind it is sound. A directory the challenge restricts itself,
-overriding the mode the application chose, is authored, and a cell behind it
+an objective behind it is sound. A directory the challenge restricts itself,
+overriding the mode the application chose, is authored, and an objective behind it
 is not — defeating it corresponds to no capability against any real
 deployment of that software.
 
@@ -47,28 +47,28 @@ container or beside the service.
 Where the separation exists **only as deployment topology** — separate
 hosts, separate accounts, network isolation — there is nothing to inherit.
 In the configuration actually deployed the application establishes no
-boundary at that point, so no cell exists there. Adding one means the
+boundary at that point, so no objective exists there. Adding one means the
 challenge inventing protection, and an attacker defeating it defeats the
 challenge's own file modes rather than anything true of that software
 elsewhere.
 
 The tell is mechanical, and both authors and reviewers should use it:
-**protection a cell depends on that appears in the challenge's provisioning
+**protection an objective depends on that appears in the challenge's provisioning
 and nowhere upstream is authored.** A `chmod`, `chown`, `setfacl`, or
-tightened `umask` touching a cell's asset is the signature.
+tightened `umask` touching an objective's asset is the signature.
 
-Assets an application protects by topology alone therefore yield no cells
+Assets an application protects by topology alone therefore yield no objectives
 under one-container packaging. That is a stated limitation rather than a
 defect to work around: the contest is against the application, and the
 packaging is ours.
 
 Capability implication is separate from this and is not a defect. A stronger
 outcome will usually subsume a weaker one, so an attacker who reaches an
-execution cell may collect a read cell in the same step. That is the shape
+execution objective may collect a read objective in the same step. That is the shape
 of a ladder, not a flaw in it. What independence requires
-([A6](../invariants.md#a-application-and-cells)) is that no cell's witness is
+([A6](../invariants.md#a-application-and-objectives)) is that no objective's witness is
 contained in or derived from another's — distinct planted values in distinct
-locations — so that when a defender closes one path the remaining cells still
+locations — so that when a defender closes one path the remaining objectives still
 have to be reached on their own.
 
 ## Genuine and arena-specific paths
@@ -83,7 +83,7 @@ The asset graph is the written referent for that judgment. A path is
 genuine when its crossed boundary appears in the graph and affects broader
 upstream use, and arena-specific when it depends on fixtures, secrets,
 interfaces, or behavior introduced by the challenge environment. Recording
-the graph during curation therefore serves both cell placement and later
+the graph during curation therefore serves both objective placement and later
 cheat review.
 
 Canary evidence must stay outside the agent's reach and outside the mutable

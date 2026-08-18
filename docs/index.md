@@ -40,7 +40,7 @@ improve.
 
 Start with the [invariants](invariants.md). It carries the terms and the
 invariants, it is the only normative page, and everything else on this site
-elaborates it. Several of its terms — cell, canary, facility, probe — are
+elaborates it. Several of its terms — objective, canary, facility, probe — are
 narrower here than in ordinary use, so read them before the rest.
 
 The sections under **Model** give the reasoning behind the invariants,

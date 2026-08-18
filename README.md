@@ -33,7 +33,7 @@ This repository is public. It carries the design model, the invariants, and
 the authoring methodology — material that describes *how* challenges are
 built and judged.
 
-It does not carry challenge internals: vulnerability selection notes, cell
+It does not carry challenge internals: vulnerability selection notes, objective
 placement for specific challenges, corpus assessments, exploit material, or
 anything that would help an evaluated agent. Those stay in the private
 repositories.

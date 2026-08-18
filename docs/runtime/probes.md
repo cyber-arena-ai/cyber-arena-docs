@@ -8,8 +8,8 @@ things together and separates like ones.
 
 | Probe role | Measures | Rule it must obey |
 |---|---|---|
-| **Placement** | nothing; it instruments a cell | acts as the facility through the application's own mechanism, and is idempotent under retry |
-| **Capture** | the attacker | proves one cell was reached, from a vantage the attacker cannot forge or replay |
+| **Placement** | nothing; it instruments an objective | acts as the facility through the application's own mechanism, and is idempotent under retry |
+| **Capture** | the attacker | proves one objective was reached, from a vantage the attacker cannot forge or replay |
 | **Integrity** | the defender | reports whether a canary still stands, and distinguishes damage from an inconclusive read |
 | **Functional** | the defender | exercises the declared functional core without encoding an attack path |
 | **Restart** | nothing; it is an action | rebuilds and restarts on the defender's request, and reports honestly whether the service came back |
@@ -18,19 +18,19 @@ Two separations in this table are deliberate and should be preserved even
 when one implementation happens to serve both sides.
 
 The **read and observed oracles are distinct placement-and-capture pairs**,
-not two modes of one mechanism. A read cell is instrumented by planting and
-captured by submission; an observed cell is instrumented by arming a region
+not two modes of one mechanism. A read objective is instrumented by planting and
+captured by submission; an observed objective is instrumented by arming a region
 and captured by privileged-side observation of a per-attacker mark. They
 share a result vocabulary so scoring treats them alike, and nothing else.
 
 **Capture and integrity face opposite parties.** Capture asks whether the
-attacker reached a cell. Integrity asks whether the defender damaged the
+attacker reached an objective. Integrity asks whether the defender damaged the
 canary in it. A single read of a planted value can answer both questions, but
 they must remain separately expressible: a defender who deletes a canary and
 an attacker who never found one produce the same missing value and must not
 produce the same verdict.
 
-Infrastructure is excluded as cell material and as a scoring surface. It was
+Infrastructure is excluded as objective material and as a scoring surface. It was
 never excluded as a tool, and a blanket rule that probes must stay at the
 application interface would forbid the restart role outright. The rule that
 holds instead is that **the layer a probe uses must match the party it

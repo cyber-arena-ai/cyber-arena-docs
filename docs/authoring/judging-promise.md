@@ -9,12 +9,12 @@ candidate:
    which attacker input reaches which sink and which constraint the fix
    restored. This yields the primitive's reach set.
 2. **What does the reach set intersect?** Join the reach set against the
-   application's declared cells. A non-empty intersection beyond the floor cell
+   application's declared objectives. A non-empty intersection beyond the floor objective
    is headroom.
-3. **Is there one nameable composition step?** Does some reachable cell
+3. **Is there one nameable composition step?** Does some reachable objective
    hold material — a credential, configuration value, administrative
    object, internal endpoint, or loadable path — that unlocks a further
-   cell?
+   objective?
 
 Reach sets follow from the primitive class:
 
@@ -42,9 +42,9 @@ require a build, an execution, or a full source trace.
 ## Floor at the ceiling
 
 A primitive that lands directly on the service process has no headroom,
-because every lower cell is then trivially reachable and the ladder
+because every lower objective is then trivially reachable and the ladder
 collapses to one meaningful step. This must not disqualify execution
-challenges. When the floor cell is the ceiling, the headroom requirement is
+challenges. When the floor objective is the ceiling, the headroom requirement is
 waived and the entire difficulty burden shifts to the defense: blocking the
 path must require restoring an invariant while preserving the functional
 core.
@@ -52,7 +52,7 @@ core.
 A candidate fails exactly there when its floor is at the ceiling, so there
 is no escalation to measure, and its repair is a single argument or option
 restriction, so there is no defensive difficulty either. A shallow attack
-chain remains acceptable when the cells above it are deep; when nothing is
+chain remains acceptable when the objectives above it are deep; when nothing is
 above it, the defense must carry the challenge alone.
 
 ## Potential candidate-source enhancement
@@ -81,7 +81,7 @@ The three questions must be answered to the same standard whether or not
 these records exist. They may shorten the work — a tested module names the
 sink, and evidence of exploitation in the wild corroborates that
 prerequisites arise in a default configuration — but they may not stand in
-for the reach set, the intersected cells, or the composition step, and they
+for the reach set, the intersected objectives, or the composition step, and they
 may not lift a verdict when the intersection is empty. Their absence is not
 evidence against a candidate: a repair showing query control in an
 application with a credential store is promising on identical footing to

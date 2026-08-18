@@ -5,11 +5,11 @@ Rotation is not a property of one oracle. Every path requires the same
 thing, and the paths differ only in who supplies it
 ([C1](../invariants.md#c-proof-material)):
 
-> Every round issues fresh proof material for every cell, and only the
+> Every round issues fresh proof material for every objective, and only the
 > current round's material may be credited.
 
-A read cell satisfies this by planting a new value the attacker must find
-again. An observed cell satisfies it by issuing a new mark to each attacker.
+A read objective satisfies this by planting a new value the attacker must find
+again. An observed objective satisfies it by issuing a new mark to each attacker.
 The read path therefore carries the work — its placement probe must re-plant
 each round — while the observed path gets the property for free from
 issuance, and the challenge never touches the material.
@@ -20,7 +20,7 @@ every path.
 | Axis | Required | Purpose |
 |---|---|---|
 | Round | yes | last round's proof is worthless this round |
-| Cell | yes | no cell's material is derived from another's, so closing one path does not leak the rest |
+| Objective | yes | no objective's material is derived from another's, so closing one path does not leak the rest |
 | Victim | yes | material recovered from one box does not score against another |
 | Attacker | observed oracles only | a mark identifies who placed it; a planted value cannot, since one value serves every attacker of that victim |
 
@@ -28,7 +28,7 @@ The missing attacker axis is the read oracle's known weakness. Its canary is
 per victim, so two attacking teams that both recover it are
 indistinguishable and one may hand it to the other. Rotation bounds that
 window to a single round rather than closing it, and the asymmetry is
-accepted rather than concealed: observed cells attribute, read cells do not.
+accepted rather than concealed: observed objectives attribute, read objectives do not.
 
 ## Seeded context defeats rehearsal, not replay
 

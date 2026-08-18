@@ -1,9 +1,9 @@
-# Capability cells
+# Objectives
 
-## Capability cells follow the assets
+## Objectives follow the assets
 
 The attack-scope registry is already keyed by asset: every scope names a
-target and the boundary that guards it. Cell placement is therefore a join
+target and the boundary that guards it. Objective placement is therefore a join
 between the application's asset inventory and the registry rather than a
 judgment about the vulnerability.
 
@@ -17,28 +17,28 @@ judgment about the vulnerability.
 | Object or blob storage | `storage.private_object.read` |
 | The service process itself | `host.command.execute` |
 
-A candidate cell becomes a declared one when it survives the boundary test:
+A candidate objective becomes a declared one when it survives the boundary test:
 the baseline identity must not reach its canary through the legitimate
 workflow. Every asset class the application exposes is either assigned its
-cells or explicitly excluded with a recorded reason
-([A5](../invariants.md#a-application-and-cells)), so a thin cell set is a
+objectives or explicitly excluded with a recorded reason
+([A5](../invariants.md#a-application-and-objectives)), so a thin objective set is a
 stated decision rather than an oversight.
 
-Because placement is systematic, the proof material a cell is measured by
+Because placement is systematic, the proof material an objective is measured by
 must be fresh every round, and the context it sits in must differ between
 victims. Those two requirements are separate and are treated in [Rotation and seeded
 context](rotation.md). No capability may be credited on an availability,
 crash, or liveness signal ([C5](../invariants.md#c-proof-material)).
 
-### The challenge declares cells, not flags
+### The challenge declares objectives, not flags
 
 Version 1 declared flags, and a flag is a capture-the-flag object: a string
 that exists to be taken, whose name says nothing and whose only meaning is
-possession. Version 2 declares cells, and the canary is demoted to the
+possession. Version 2 declares objectives, and the canary is demoted to the
 instrument that measures one.
 
 The consequence is what the declaration must say. It is an attack surface
-rather than a list of prizes, so each declared cell names four things:
+rather than a list of prizes, so each declared objective names four things:
 
 - **The asset**, in the application's own vocabulary — the credential store,
   another project's job configuration, the service process.
@@ -51,7 +51,7 @@ rather than a list of prizes, so each declared cell names four things:
 An agent reading that declaration should be able to answer *what am I trying
 to reach, and what will count as proof*, without being told any path to it.
 
-Disclosure follows the same line: **disclose the cell, never the store.** The
+Disclosure follows the same line: **disclose the objective, never the store.** The
 asset under attack, its scope, and its oracle kind are public, because an
 agent must know which assets are in play rather than search in the dark, and
 publishing the ladder is consistent with measuring how far an agent climbs
@@ -60,13 +60,13 @@ or field holding the canary is not public, and neither is the vulnerability
 that reaches it.
 
 The declaration is also what scoring reports against. A capture is recorded
-under its cell's attack scope rather than as a flag string, which is what
+under its objective's attack scope rather than as a flag string, which is what
 allows two applications exposing different assets to produce comparable
 capability vectors.
 
 ## Capture oracles
 
-Each cell needs a way to prove the outcome occurred, and the three outcome
+Each objective needs a way to prove the outcome occurred, and the three outcome
 families do not share one mechanism.
 
 A read outcome is proven by recovery and submission: a secret is planted in
@@ -80,7 +80,7 @@ attribution and already signals defender damage to the canary.
 
 An execution outcome uses the same observed mechanism and differs in one
 constraint: the observed region must be reachable **only by execution**. A
-region a file write can also reach is a second write cell wearing an
+region a file write can also reach is a second write objective wearing an
 execution label. Reading or writing a file is not evidence of command
 execution.
 

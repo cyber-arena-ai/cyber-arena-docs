@@ -36,7 +36,7 @@ nav:
   - Model:
       - The challenge model: model/challenge-model.md
       - Access layers: model/layers.md
-      - Capability cells: model/cells.md
+      - Objectives: model/objectives.md
       - Rotation and seeded context: model/rotation.md
       - State and measurement: model/state.md
       - Reproduction and escalation: model/results.md

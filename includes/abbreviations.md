@@ -1,11 +1,11 @@
-*[cell]: One asset combined with one registered attack scope, in one application. The unit a challenge declares.
-*[Cell]: One asset combined with one registered attack scope, in one application. The unit a challenge declares.
-*[cells]: One asset combined with one registered attack scope, in one application. The unit a challenge declares.
-*[Cells]: One asset combined with one registered attack scope, in one application. The unit a challenge declares.
+*[objective]: One asset combined with one registered attack scope, in one application. The unit a challenge declares.
+*[Objective]: One asset combined with one registered attack scope, in one application. The unit a challenge declares.
+*[objectives]: One asset combined with one registered attack scope, in one application. The unit a challenge declares.
+*[Objectives]: One asset combined with one registered attack scope, in one application. The unit a challenge declares.
 
-*[canary]: The rotating value the facility plants or issues to measure a cell. An instrument, never an asset.
-*[Canary]: The rotating value the facility plants or issues to measure a cell. An instrument, never an asset.
-*[canaries]: The rotating value the facility plants or issues to measure a cell. An instrument, never an asset.
+*[canary]: The rotating value the facility plants or issues to measure an objective. An instrument, never an asset.
+*[Canary]: The rotating value the facility plants or issues to measure an objective. An instrument, never an asset.
+*[canaries]: The rotating value the facility plants or issues to measure an objective. An instrument, never an asset.
 
 *[mark]: The per-attacker, per-round canary used by observed oracles, supplying attribution and replay resistance.
 *[marks]: The per-attacker, per-round canary used by observed oracles, supplying attribution and replay resistance.
@@ -23,18 +23,18 @@
 *[asset graph]: The inventory of an application's assets and the boundaries guarding them, inferred during triage and confirmed at runtime.
 *[Asset graph]: The inventory of an application's assets and the boundaries guarding them, inferred during triage and confirmed at runtime.
 
-*[floor witness]: The advisory-backed path proving at least one cell is reachable at the pinned revision.
-*[Floor witness]: The advisory-backed path proving at least one cell is reachable at the pinned revision.
+*[floor witness]: The advisory-backed path proving at least one objective is reachable at the pinned revision.
+*[Floor witness]: The advisory-backed path proving at least one objective is reachable at the pinned revision.
 
 *[functional core]: The minimum declared workflows a defense must preserve.
 *[Functional core]: The minimum declared workflows a defense must preserve.
 
-*[read oracle]: Proves a cell by recovery: the facility plants a canary, the attacker submits the value.
-*[Read oracle]: Proves a cell by recovery: the facility plants a canary, the attacker submits the value.
+*[read oracle]: Proves an objective by recovery: the facility plants a canary, the attacker submits the value.
+*[Read oracle]: Proves an objective by recovery: the facility plants a canary, the attacker submits the value.
 
-*[observed oracle]: Proves a cell by observation: the facility issues a mark, the attacker places it in protected state, the facility observes it privileged-side.
-*[Observed oracle]: Proves a cell by observation: the facility issues a mark, the attacker places it in protected state, the facility observes it privileged-side.
-*[observed oracles]: Proves a cell by observation: the facility issues a mark, the attacker places it in protected state, the facility observes it privileged-side.
+*[observed oracle]: Proves an objective by observation: the facility issues a mark, the attacker places it in protected state, the facility observes it privileged-side.
+*[Observed oracle]: Proves an objective by observation: the facility issues a mark, the attacker places it in protected state, the facility observes it privileged-side.
+*[observed oracles]: Proves an objective by observation: the facility issues a mark, the attacker places it in protected state, the facility observes it privileged-side.
 
 *[vulbox probe]: The per-challenge code the orchestrator calls during a match, in five roles: placement, capture, integrity, functional, restart.
 *[Vulbox probe]: The per-challenge code the orchestrator calls during a match, in five roles: placement, capture, integrity, functional, restart.
@@ -47,26 +47,26 @@
 *[Boundary]: The application-established separation guarding an asset from the baseline identity.
 *[boundaries]: The application-established separation guarding an asset from the baseline identity.
 
-*[capability]: The independently scored outcome of reaching a cell, reported under that cell's attack scope.
-*[Capability]: The independently scored outcome of reaching a cell, reported under that cell's attack scope.
-*[capabilities]: The independently scored outcome of reaching a cell, reported under that cell's attack scope.
+*[capability]: The independently scored outcome of reaching an objective, reported under that objective's attack scope.
+*[Capability]: The independently scored outcome of reaching an objective, reported under that objective's attack scope.
+*[capabilities]: The independently scored outcome of reaching an objective, reported under that objective's attack scope.
 
 *[interface]: The application's public surface, where the attacker starts.
 *[Interface]: The application's public surface, where the attacker starts.
 
-*[privileged actions]: The typed operations whose protection the application authors, where cells live and where the facility plants.
-*[Privileged actions]: The typed operations whose protection the application authors, where cells live and where the facility plants.
+*[privileged actions]: The typed operations whose protection the application authors, where objectives live and where the facility plants.
+*[Privileged actions]: The typed operations whose protection the application authors, where objectives live and where the facility plants.
 
-*[infrastructure]: Container, filesystem, SSH, network, orchestrator — neither a scoring surface nor cell material.
-*[Infrastructure]: Container, filesystem, SSH, network, orchestrator — neither a scoring surface nor cell material.
+*[infrastructure]: Container, filesystem, SSH, network, orchestrator — neither a scoring surface nor objective material.
+*[Infrastructure]: Container, filesystem, SSH, network, orchestrator — neither a scoring surface nor objective material.
 
 
 
 *[genuine path]: A path crossing a boundary that exists in the upstream application, as against an arena-specific path that depends on fixtures the challenge introduced.
 *[arena-specific path]: A path that depends on fixtures, secrets, interfaces, or behavior introduced by the challenge environment.
 
-*[reproduction]: The per-instance label for cells the floor witness reaches, read off the record after the fact.
-*[escalation]: The per-instance label for cells beyond those the floor witness reaches, read off the record after the fact.
+*[reproduction]: The per-instance label for objectives the floor witness reaches, read off the record after the fact.
+*[escalation]: The per-instance label for objectives beyond those the floor witness reaches, read off the record after the fact.
 
 <!-- Deliberately NOT auto-linked: runtime and deployment.
      Both are defined terms, but most of their occurrences in this site use the
