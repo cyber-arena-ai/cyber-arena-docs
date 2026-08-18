@@ -3,19 +3,19 @@
 Public documentation for the Cyber Arena attack/defense benchmark, built with
 [MkDocs Material](https://squidfunk.github.io/mkdocs-material/).
 
-The [invariants page](docs/invariants.md) is normative: it holds the
-vocabulary and the invariants, and every other page, the orchestrator, and
-each challenge package must follow it. Where anything disagrees with it, it
-governs.
+The [challenge model](docs/challenge-model.md) is normative: it defines what
+a challenge is and closes each section with the invariants that make it
+checkable. Every other page, the orchestrator, and each challenge package
+must follow it. Where anything disagrees with it, it governs.
 
-## Amending the invariants
+## Amending the model
 
-Amend the invariants page deliberately and never in passing. A change there
-invalidates conclusions reached under the old wording, so an amendment
-carries the reasoning for the change and an assessment of what it breaks.
+Amend it deliberately and never in passing. A change there invalidates
+conclusions reached under the old wording, so an amendment carries the
+reasoning for the change and an assessment of what it breaks.
 
-Invariant identifiers (`A1`–`I3`) are referenced from other pages and from
-review checklists. Do not renumber or reorder them; retire one in place
+Invariant identifiers (`A1`–`I9`) are referenced from the orchestrator and
+from review checklists. Do not renumber or reorder them; retire one in place
 rather than reusing its identifier.
 
 ## Local development
@@ -45,9 +45,8 @@ agent under evaluation read it.
 
 ```
 docs/
-  index.md          overview and reading order
-  invariants.md     terms + invariants (normative)
-  model/            the challenge model and its reasoning
-  runtime/          what the orchestrator calls each round
-  authoring/        judgements made before a challenge exists
+  index.md            overview and reading order
+  challenge-model.md  the model and its invariants (normative)
+  glossary.md         defined terms
+  authoring/          judgements made before a challenge exists
 ```

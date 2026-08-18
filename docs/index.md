@@ -38,12 +38,14 @@ improve.
 
 ## Reading order
 
-Start with the [invariants](invariants.md). It carries the terms and the
-invariants, it is the only normative page, and everything else on this site
-elaborates it. Several of its terms — objective, canary, facility, probe — are
-narrower here than in ordinary use, so read them before the rest.
+Read [the challenge model](challenge-model.md) first. It is the only
+normative page: it defines what a challenge is, section by section, and
+closes each section with the invariants that make it checkable. Everything
+else on this site and in the orchestrator elaborates it.
 
-The sections under **Model** give the reasoning behind the invariants,
-**Orchestration** covers what the orchestrator calls each round, and
-**Authoring** covers the judgements a challenge author makes before any of it
-applies.
+Several of its terms — objective, canary, facility, noise — are narrower here
+than in ordinary use. The [glossary](glossary.md) carries them, and the site
+shows each definition on hover wherever the term appears.
+
+**Authoring** covers judgements a challenge author makes before any of the
+model applies.

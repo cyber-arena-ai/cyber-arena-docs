@@ -32,21 +32,10 @@ theme:
 
 nav:
   - Overview: index.md
-  - Invariants: invariants.md
-  - Model:
-      - The challenge model: model/challenge-model.md
-      - Access layers: model/layers.md
-      - Objectives: model/objectives.md
-      - Rotation and seeded context: model/rotation.md
-      - State and measurement: model/state.md
-      - Reproduction and escalation: model/results.md
-  - Orchestration:
-      - Probes and hooks: runtime/probes.md
-      - Functionality checks: runtime/functionality-checks.md
+  - The challenge model: challenge-model.md
+  - Glossary: glossary.md
   - Authoring:
-      - Establishing the asset graph: authoring/asset-graph.md
       - Judging candidate promise: authoring/judging-promise.md
-      - Inherited boundaries: authoring/boundaries.md
 
 markdown_extensions:
   - abbr
