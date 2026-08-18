@@ -277,7 +277,7 @@ it.
 **Disclose the objective, never the store.** The asset, its scope, and its
 oracle kind are public, because measuring how far an agent climbs is
 inconsistent with making it guess where to look; the storage schema, the
-surrounding seeded population, and the vulnerability that reaches it are not.
+surrounding seed data, and the vulnerability that reaches it are not.
 
 **Implication between objectives is expected.** An attacker who reaches an
 execute objective may collect a read objective in the same step, which is the
@@ -381,14 +381,14 @@ the facility's capture and locate the region.
 
 **Execute regions are anchored differently.** C5 requires an execute region to
 be unreachable by writing, and seed data is created by application writes, so
-an execute region cannot sit inside the seeded population. It is a runtime
+an execute region cannot sit inside the seed data. It is a runtime
 artifact — a process, a transient path only execution produces — and C9's
 seed-anchoring applies to write objectives alone.
 
 **Rotating the observed region raises that cost, but only if the family spans
 the asset class.** A region cycling through three fixed records is worthless —
 the defender locks three records and preserves the core; a region drawn
-uniformly from the seeded population forces locking the whole class, which the
+uniformly from the seed data forces locking the whole class, which the
 functional core forbids. It stays an optional per-challenge technique rather
 than an invariant.
 
@@ -428,9 +428,9 @@ suppliers.** Their separation is what makes an objective sound.
 objectives are most easily invalidated, because the author who can create an
 asset cannot create its protection.
 
-**The flag handler owns it.** The population and the canary inside it are one
+**The flag handler owns it.** The seed data and the canary inside it are one
 concern: the code that plants a canary into a credential entry is the code that
-must know the entry exists. It creates the population on first placement and
+must know the entry exists. It creates the seed data on first placement and
 reconciles it every round after, so a wipe is repaired rather than fatal.
 
 #### Seed data defeats rehearsal, not replay
@@ -459,7 +459,7 @@ and the round axis already denies replay.
   follow from a per-team seed by a documented function.
 - **Key the derivation with a match secret.** A seed computed from the team
   identifier alone would let any team derive its opponent's layout.
-- **The seed never lands on the box.** The population does; the seed stays with
+- **The seed never lands on the box.** The seed data does; the seed itself stays with
   the facility, or one read primitive yields the whole layout instead of a
   single value.
 - **Determinism covers layout, not canaries.** Layout is deterministic and
@@ -899,7 +899,7 @@ hidden.** These invariants are normative and not yet enforced by any framework.
 
 | Invariant | Gap |
 |---|---|
-| **D1–D3** | no per-team seed exists; challenge populations are baked into the image and are therefore identical across teams — the rehearsal replica §7 forbids |
+| **D1–D3** | no per-team seed exists; seed data is baked into the image and are therefore identical across teams — the rehearsal replica §7 forbids |
 | **E5, E6** | placement repair fires only on an authentication rejection, and the round loop arms observed regions before rotating canaries, reversing E6 |
 | **E7** | canary loss is emitted as an event and never aggregated |
 | **I7** | the mediated mutation path is offered but not enforced; a defender with root may edit and restart outside it |
