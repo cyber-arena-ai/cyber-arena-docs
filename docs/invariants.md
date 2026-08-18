@@ -15,22 +15,20 @@ section is the contract.
 
 - **A1.** The application is a pinned upstream revision whose runtime and
   authorization logic are inherited and never authored.
-- **A2.** An objective covers exactly one asset under exactly one attack
-  scope.
 
-- **A3.** An objective exists only when all three hold: the application holds the
+- **A2.** An objective exists only when all three hold: the application holds the
   asset, the boundary guarding it was established by the application, and
   the application exposes a typed operation the facility can plant through.
-- **A4.** No objective lies within the baseline identity's legitimate reach.
-- **A5.** Every asset class the application exposes is either assigned its
+- **A3.** No objective lies within the baseline identity's legitimate reach.
+- **A4.** Every asset class the application exposes is either assigned its
   objectives or excluded with a recorded reason.
-- **A6.** No objective's proof material is contained in or derived from another
+- **A5.** No objective's proof material is contained in or derived from another
   objective's.
-- **A7.** Objectives are derived from the asset graph and never from the
+- **A6.** Objectives are derived from the asset graph and never from the
   vulnerability.
-- **A8.** An objective declaration names the asset, its attack scope, its oracle
+- **A7.** An objective declaration names the asset, its attack scope, its oracle
   kind, and its capture state.
-- **A9.** An objective declaration never names the store.
+- **A8.** An objective declaration never names the store.
 
 ### B. Baseline identity
 
@@ -195,7 +193,7 @@ it.
 | **Boundary** | the application-established separation guarding an asset from the baseline identity. |
 | **Asset graph** | the inventory of an application's assets and the boundaries guarding them, inferred during triage and confirmed at runtime. |
 | **Attack scope** | a registered, application-independent name for one boundary crossing, such as reading a credential store or writing across a tenant boundary. |
-| **Objective** | one asset behind one boundary in one application, carrying an attack scope, and the unit a challenge declares. |
+| **Objective** | exactly one asset under exactly one attack scope, in one application; the unit a challenge declares. |
 | **Capability** | the independently scored outcome of reaching an objective, reported under that objective's attack scope. |
 | **Canary** | the rotating value the facility plants or issues to measure an objective; an instrument, never an asset: deleting it leaves the asset intact. |
 | **Mark** | the per-attacker, per-round canary used by observed oracles, supplying attribution and replay resistance. |

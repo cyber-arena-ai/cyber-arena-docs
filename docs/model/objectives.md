@@ -21,7 +21,7 @@ A candidate objective becomes a declared one when it survives the boundary test:
 the baseline identity must not reach its canary through the legitimate
 workflow. Every asset class the application exposes is either assigned its
 objectives or explicitly excluded with a recorded reason
-([A5](../invariants.md#a-application-and-objectives)), so a thin objective set is a
+([A4](../invariants.md#a-application-and-objectives)), so a thin objective set is a
 stated decision rather than an oversight.
 
 Because placement is systematic, the proof material an objective is measured by
