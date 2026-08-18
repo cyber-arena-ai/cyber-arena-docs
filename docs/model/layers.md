@@ -61,9 +61,8 @@ mechanism is what makes a boundary the application's own.
   ownership it sets, keys it generates, directories it restricts.
 - Endpoints the application exposes only to authenticated or privileged
   principals, including internal and loopback-only surfaces.
-- Seeded application state — identities, records, jobs, credential
-  entries — where deployment created it through the application's own
-  mechanism.
+- Seed data — identities, records, jobs, credential entries — where the flag
+  handler created it through an application operation.
 
 *Test: the application refuses it to the baseline identity, by logic or by
 protection the application itself established.*
