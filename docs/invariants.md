@@ -1,25 +1,14 @@
-# Constitution
+# Invariants
 
-This page is normative. Everything else in this site, in the orchestrator,
-and in any challenge package is an elaboration of it, and where they
-disagree, this page governs.
-
-It holds two things: the terms, used with exactly one meaning throughout,
-and the invariants, stated so that each can be checked and failed. A design
-that cannot be expressed in these terms is not yet designed, and an
-implementation that violates an invariant is wrong even when it works.
-
-!!! warning "Changing this page"
-
-    Amend it deliberately and never in passing. A change here invalidates
-    conclusions reached under the old wording, so an amendment carries the
-    reasoning for the change and an assessment of what it breaks.
+This page is normative: everything else in this site, in the orchestrator,
+and in any challenge package elaborates it, and where they disagree, this
+page governs. It holds the terms, used with exactly one meaning throughout,
+and the invariants, stated so that each can be checked and failed.
 
 ## Terms
 
-These terms are used with exactly these meanings throughout. Where a term
-also names something in the orchestrator, the code meaning wins and this
-document follows it.
+Where a term also names something in the orchestrator, the code meaning wins
+and this document follows it.
 
 ### What ships in a challenge
 
@@ -45,10 +34,10 @@ document follows it.
 | **Asset** | something the application protects — a credential store, another tenant's records, the service process. |
 | **Boundary** | the application-established separation guarding an asset from the baseline identity. |
 | **Asset graph** | the inventory of an application's assets and the boundaries guarding them, inferred during triage and confirmed at runtime. |
-| **Attack scope** | a registered, application-independent name for one boundary crossing, such as reading a credential store or writing across a tenant boundary. The unit that makes results comparable between challenges. |
-| **Cell** | one asset behind one boundary in one application, carrying an attack scope. The gap between what the facility holds by right and what the attacker starts with, and the unit a challenge declares. |
+| **Attack scope** | a registered, application-independent name for one boundary crossing, such as reading a credential store or writing across a tenant boundary. |
+| **Cell** | one asset behind one boundary in one application, carrying an attack scope. The unit a challenge declares. |
 | **Capability** | the independently scored outcome of reaching a cell, reported under that cell's attack scope. |
-| **Canary** | the rotating value the facility plants or issues to measure a cell. An instrument, never an asset: deleting it leaves the asset intact. Called a flag in v1, where it was the object of the game rather than the measuring device. |
+| **Canary** | the rotating value the facility plants or issues to measure a cell. An instrument, never an asset: deleting it leaves the asset intact. |
 | **Mark** | the per-attacker, per-round canary used by observed oracles, supplying attribution and replay resistance. |
 | **Read oracle** | proves a cell by recovery: the facility plants a canary, the attacker submits the value. |
 | **Observed oracle** | proves a cell by observation: the facility issues a mark, the attacker places it in protected state, the facility observes it privileged-side. Covers write and execution outcomes. |
@@ -59,11 +48,11 @@ document follows it.
 | **Genuine path** | a path crossing a boundary that exists in the upstream application, as against an **arena-specific path** that depends on fixtures the challenge introduced. |
 
 
-## Invariants
+## The invariants
 
-Everything the rest of this document argues for reduces to the properties
-below. Each is stated so that it can be checked and failed. The sections
-that follow give the reasoning; this section is the contract.
+Everything the rest of this site argues for reduces to the properties below.
+The Model, Runtime, and Authoring pages give the reasoning; this section is
+the contract.
 
 ### A. Application and cells
 
@@ -107,8 +96,7 @@ that follow give the reasoning; this section is the contract.
 ### D. Seeded context
 
 - **D1.** The seeded population is a pure function of a per-team seed.
-- **D2.** The seed derivation is keyed by a match secret, so no team can
-  derive another team's layout.
+- **D2.** The seed derivation is keyed by a match secret.
 - **D3.** The seed never lands on the box; only the population it generates
   does.
 - **D4.** Seeding runs at bring-up, once per team, and the layout is static
@@ -149,8 +137,7 @@ that follow give the reasoning; this section is the contract.
 - **G1.** The runtime records and does not judge. No component decides a
   verdict during a match.
 - **G2.** Retry is the only runtime response to an inconclusive
-  measurement, because it is the only one that cannot be reconstructed
-  later.
+  measurement.
 - **G3.** Every measurement is three-valued and is recorded with its reason,
   including the inconclusive case.
 - **G4.** The record preserves reached-this-round against retained from an

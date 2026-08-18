@@ -20,14 +20,15 @@ judgment about the vulnerability.
 A candidate cell becomes a declared one when it survives the boundary test:
 the baseline identity must not reach its canary through the legitimate
 workflow. Every asset class the application exposes is either assigned its
-cells or explicitly excluded with a recorded reason, so a thin cell set is a
+cells or explicitly excluded with a recorded reason
+([A5](../invariants.md#a-application-and-cells)), so a thin cell set is a
 stated decision rather than an oversight.
 
 Because placement is systematic, the proof material a cell is measured by
 must be fresh every round, and the context it sits in must differ between
 victims. Those two requirements are separate and are treated in [Rotation and seeded
 context](rotation.md). No capability may be credited on an availability,
-crash, or liveness signal.
+crash, or liveness signal ([C5](../invariants.md#c-proof-material)).
 
 ### The challenge declares cells, not flags
 

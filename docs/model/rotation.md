@@ -2,7 +2,8 @@
 
 
 Rotation is not a property of one oracle. Every path requires the same
-thing, and the paths differ only in who supplies it:
+thing, and the paths differ only in who supplies it
+([C1](../invariants.md#c-proof-material)):
 
 > Every round issues fresh proof material for every cell, and only the
 > current round's material may be credited.
@@ -29,7 +30,7 @@ indistinguishable and one may hand it to the other. Rotation bounds that
 window to a single round rather than closing it, and the asymmetry is
 accepted rather than concealed: observed cells attribute, read cells do not.
 
-### Seeded context defeats rehearsal, not replay
+## Seeded context defeats rehearsal, not replay
 
 Every team runs the same application image and holds privileged access to
 its own box. If the seeded data layer were identical across teams, an
@@ -50,10 +51,10 @@ exercise. Per-round reseeding would also achieve nothing, because the
 victim axis already denies rehearsal and the round axis already denies
 replay.
 
-### Seeding is deterministic
+## Seeding is deterministic
 
 The seeded population must be a pure function of a per-team seed rather than
-freshly sampled.
+freshly sampled ([D1](../invariants.md#d-seeded-context)).
 
 - **Derive rather than sample.** Identities, names, identifiers, and paths
   all follow from the seed by a documented function.

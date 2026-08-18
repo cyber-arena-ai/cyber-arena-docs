@@ -40,9 +40,9 @@ than it returns.
 Idempotence is not enough. Running twice without extra harm says nothing
 about running against a box whose state has been mangled.
 
-> Placement must be **convergent**: run from any prior state — missing,
-> duplicated, corrupted, re-permissioned, half-deleted — it lands on the
-> declared state.
+> Placement must be **convergent** ([F2](../invariants.md#f-probes-and-state)):
+> run from any prior state — missing, duplicated, corrupted, re-permissioned,
+> half-deleted — it lands on the declared state.
 
 This is a desired-state contract. The handler declares what the context
 should be and reconciles toward it, rather than assuming what it will find.
@@ -76,7 +76,8 @@ damaged, or unreadable; a functional check can pass, fail, or not complete.
 The design must say what an inconclusive measurement means, because the
 record it feeds is two-valued unless something forces otherwise.
 
-The answer is that the orchestrator instruments rather than judges.
+The answer is that the orchestrator instruments rather than judges
+([G1](../invariants.md#g-measurement-and-recording)).
 
 > A match produces a log of what was observed, including what could not be
 > determined. Scores are computed from that log afterwards, so no runtime
@@ -117,4 +118,5 @@ of existence, and a defender's damage to a canary against a box that could
 not be read.
 
 The log lives with the facility, is append-only, and is not derivable from
-anything inside the box, for the same reason capture evidence is not.
+anything inside the box, for the same reason
+[capture evidence is not](../authoring/boundaries.md#genuine-and-arena-specific-paths).

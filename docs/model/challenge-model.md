@@ -1,7 +1,5 @@
 # The challenge model
 
-## Challenge model
-
 A challenge is a pinned application revision together with five things the
 benchmark measures against it:
 
@@ -32,7 +30,8 @@ It is defined per challenge rather than by the arena, because what a normal
 user is differs by application — an anonymous visitor for a public service,
 a registered account for a collaboration tool, a member of one project for a
 multi-tenant system. The arena fixes only that the definition exists, is
-written down, and is the same for every attacker.
+written down, and is the same for every attacker
+([B1](../invariants.md#b-baseline-identity)).
 
 Two things follow. Everything the baseline identity may legitimately do is
 interface, so no cell may sit inside its reach. And every capability is

@@ -3,7 +3,7 @@
 Public documentation for the Cyber Arena attack/defense benchmark, built with
 [MkDocs Material](https://squidfunk.github.io/mkdocs-material/).
 
-The [constitution](docs/constitution.md) is the normative page: it holds the
+The [invariants page](docs/invariants.md) is normative: it holds the
 vocabulary and the invariants, and every other page, the orchestrator, and
 each challenge package must follow it. Where anything disagrees with it, it
 governs.
@@ -36,7 +36,7 @@ agent under evaluation read it.
 ```
 docs/
   index.md          overview and reading order
-  constitution.md   terms + invariants (normative)
+  invariants.md     terms + invariants (normative)
   model/            the challenge model and its reasoning
   runtime/          what the orchestrator calls each round
   authoring/        judgements made before a challenge exists

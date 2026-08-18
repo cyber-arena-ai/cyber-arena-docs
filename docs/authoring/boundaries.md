@@ -2,11 +2,12 @@
 
 ## Boundaries are inherited, not authored
 
-The infrastructure rule constrains the attacker: a capture may not be scored
-through challenge infrastructure. The same principle constrains the author,
-and the second half is easier to miss. Where the layer model says how a
-sound cell is built, this section says what invalidates one. The contest is against the application, so
-the application must be both what is attacked and what defends.
+The [infrastructure rule](../model/layers.md#infrastructure) constrains the
+attacker: a capture may not be scored through challenge infrastructure. The
+same principle constrains the author, and the second half is easier to miss.
+Where the [layer model](../model/layers.md) says how a sound cell is built,
+this page says what invalidates one. The contest is against the application,
+so the application must be both what is attacked and what defends.
 
 An application decomposes into three parts for this purpose. Its **runtime**
 — code and authorization logic — is inherited from upstream. Its
@@ -64,10 +65,11 @@ packaging is ours.
 Capability implication is separate from this and is not a defect. A stronger
 outcome will usually subsume a weaker one, so an attacker who reaches an
 execution cell may collect a read cell in the same step. That is the shape
-of a ladder, not a flaw in it. What independence requires is that no cell's
-witness is contained in or derived from another's — distinct planted values
-in distinct locations — so that when a defender closes one path the
-remaining cells still have to be reached on their own.
+of a ladder, not a flaw in it. What independence requires
+([A6](../invariants.md#a-application-and-cells)) is that no cell's witness is
+contained in or derived from another's — distinct planted values in distinct
+locations — so that when a defender closes one path the remaining cells still
+have to be reached on their own.
 
 ## Genuine and arena-specific paths
 

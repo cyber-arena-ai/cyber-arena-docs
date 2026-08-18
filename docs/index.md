@@ -38,7 +38,7 @@ improve.
 
 ## Reading order
 
-Start with the [constitution](constitution.md). It carries the terms and the
+Start with the [invariants](invariants.md). It carries the terms and the
 invariants, it is the only normative page, and everything else on this site
 elaborates it. Several of its terms — cell, canary, facility, probe — are
 narrower here than in ordinary use, so read them before the rest.

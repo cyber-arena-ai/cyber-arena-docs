@@ -31,7 +31,7 @@ theme:
 
 nav:
   - Overview: index.md
-  - Constitution: constitution.md
+  - Invariants: invariants.md
   - Model:
       - The challenge model: model/challenge-model.md
       - Three layers: model/layers.md

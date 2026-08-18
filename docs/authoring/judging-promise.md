@@ -1,7 +1,5 @@
 # Judging candidate promise
 
-## Judging candidate promise
-
 Escalation potential is a property of the primitive, not of the report. An
 advisory records what someone did; the repair records what the attacker
 controls. Curation should therefore ask the same three questions of every
@@ -51,11 +49,11 @@ waived and the entire difficulty burden shifts to the defense: blocking the
 path must require restoring an invariant while preserving the functional
 core.
 
-Gitea 1.16.6 fails exactly there. Its floor is at the ceiling, so there is
-no escalation to measure, and its repair is an option terminator on one
-`git fetch` call, so there is no defensive difficulty either. A shallow
-attack chain remains acceptable when the cells above it are deep; when
-nothing is above it, the defense must carry the challenge alone.
+A candidate fails exactly there when its floor is at the ceiling, so there
+is no escalation to measure, and its repair is a single argument or option
+restriction, so there is no defensive difficulty either. A shallow attack
+chain remains acceptable when the cells above it are deep; when nothing is
+above it, the defense must carry the challenge alone.
 
 ## Potential candidate-source enhancement
 

@@ -11,9 +11,9 @@ carries a single rule.
 | **Privileged actions** | the facility acts here by right; the attacker must arrive here | typed operations whose protection the application authors — cells live here |
 | **Infrastructure** | orchestration: container, filesystem, SSH, network | neither a scoring surface nor cell material |
 
-### What each layer contains
+## What each layer contains
 
-#### Interface
+### Interface
 
 Everything the application offers to the baseline identity. A baseline
 session is part of the interface rather than past it: the attacker's
@@ -35,7 +35,7 @@ legitimate reach is the starting position, not a first success.
 
 *Test: reachable using only the rights the baseline identity already holds.*
 
-#### Privileged actions
+### Privileged actions
 
 Everything the application exposes but gates behind authority it enforces
 itself. Protection the application established and the operating system
@@ -68,7 +68,7 @@ mechanism is what makes a boundary the application's own.
 *Test: the application refuses it to the baseline identity, by logic or by
 protection the application itself established.*
 
-#### Infrastructure
+### Infrastructure
 
 Everything present in every challenge regardless of which application is
 deployed.
@@ -107,7 +107,7 @@ A cell is then the gap between what the facility holds by right and what the
 attacker starts with. That gap is asymmetric by construction, and the
 asymmetry is the challenge.
 
-### Who supplies the data
+## Who supplies the data
 
 An application in this arena is a runtime plus data, and the data has three
 suppliers whose separation determines whether a cell is sound.
@@ -128,7 +128,7 @@ while the asset does not. The test is deletion: remove the canary and the
 credential store is still a protected store that can no longer be measured;
 remove the seeded credential entry and there is nothing there to protect.
 
-### Planting goes through the application's own mechanism
+## Planting goes through the application's own mechanism
 
 The facility is not a black-box client. It is the **privileged principal** —
 it plants the credential as the administrator who owns the credential store,
@@ -136,7 +136,7 @@ and it observes the mark as root on the victim's box. A facility that could
 plant without authority would describe a cell the attacker already holds.
 
 The constraint is therefore on how it plants rather than on how much
-authority it has:
+authority it has ([E1](../invariants.md#e-layers)):
 
 > The facility plants through the operation the application exposes for that
 > asset class, at the privilege that operation requires.
@@ -148,10 +148,11 @@ protection were all chosen by the challenge, so the attacker's target is the
 challenge's file placement rather than the application's credential
 subsystem.
 
-One question decides it: **after planting, did the challenge have to add any
-protection itself?** If it chmods, chowns, or picks the directory, the
-challenge is the mechanism. If it hands the application a typed object and
-the application stores it where it stores those, the application is.
+One question decides it ([E2](../invariants.md#e-layers)): **after planting,
+did the challenge have to add any protection itself?** If it chmods, chowns,
+or picks the directory, the challenge is the mechanism. If it hands the
+application a typed object and the application stores it where it stores
+those, the application is.
 
 The line is application code against challenge code, not remote against
 local. An initialization script running inside the service and calling the
@@ -162,7 +163,7 @@ An asset with no such operation is not a packaging problem to work around.
 It is evidence that the application does not treat that asset as protected,
 and the cell does not exist.
 
-### Plant at layer two, observe from layer three, attack from layer one
+## Plant at layer two, observe from layer three, attack from layer one
 
 Observation is the one deliberate asymmetry. The observer reads at the
 infrastructure layer — over SSH, off the victim's disk — and that is sound
