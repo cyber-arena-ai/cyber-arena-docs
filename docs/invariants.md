@@ -158,7 +158,7 @@ it.
 
 | Term | Meaning |
 |---|---|
-| **Application operation** | an action the application itself exposes for an asset class — its API, CLI, or object model — where the application's own code decides where the data lands and what protects it. |
+| **Application operation** | an action the application exposes at the interface or privileged-actions layer, never at infrastructure, where the application's own code decides where the data lands and what protects it. |
 | **Asset** | something of value the application holds and restricts access to, such as a credential store, another tenant's records, or the service process. |
 | **Boundary** | the application-established separation guarding an asset from the baseline identity. |
 | **Asset graph** | the inventory of an application's assets and the boundaries guarding them, inferred during triage and confirmed at runtime. |
