@@ -24,6 +24,8 @@ section is the contract.
 
 - **A4.** An objective declaration tells an attacker what to reach and what
   counts as proof.
+- **A5.** An objective may be a read, write, or execute operation.
+
 
 
 
