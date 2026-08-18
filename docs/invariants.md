@@ -22,7 +22,7 @@ section is the contract.
 
 
 - **A3.** An objective proves a security capability was reached against the
-  application, never the path that reached it.
+  application, never the attack chain that reached it.
 
 - **A4.** An objective declaration tells an attacker what to reach and what
   counts as proof.
