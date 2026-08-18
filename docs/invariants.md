@@ -51,8 +51,8 @@ section is the contract.
 
 - **D1.** The seed data is a pure function of a per-team seed.
 - **D2.** No team can derive another team's seed data.
-- **D3.** The flag handler creates the seed data, and its layout is
-  identical in every round.
+- **D3.** Seed data layout is identical in every round.
+
 
 
 ### E. Facility conduct
