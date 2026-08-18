@@ -134,17 +134,17 @@ section is the contract.
 
 ### G. Measurement and recording
 
-- **G1.** The runtime records and does not judge. No component decides a
+- **G1.** The orchestrator records and does not judge. No component decides a
   verdict during a match.
-- **G2.** Retry is the only runtime response to an inconclusive
+- **G2.** Retry is the only in-match response to an inconclusive
   measurement.
 - **G3.** Every measurement is three-valued and is recorded with its reason,
   including the inconclusive case.
 - **G4.** The record preserves reached-this-round against retained from an
   earlier round, never-reached against no-longer-present, and defender
   damage against an unreadable box.
-- **G5.** Availability is telemetry rather than a penalty applied at
-  runtime.
+- **G5.** Availability is telemetry rather than a penalty applied during
+  the match.
 - **G6.** The log is facility-side, append-only, and not derivable from
   anything inside the box.
 - **G7.** No capability is creditable from evidence that either party can
@@ -171,11 +171,34 @@ section is the contract.
 - **I3.** Whether a path is genuine or arena-specific is judged against the
   recorded asset graph.
 
+### J. Infrastructure
+
+- **J1.** A team reaches another team's box only through that challenge's
+  declared public interface.
+- **J2.** The facility's privileged channel belongs to neither party's
+  surface. A box the facility cannot reach is recorded as unavailable, on
+  the same footing as a box that is not serving.
+- **J3.** Facility state — canary values, unissued marks, seeds, and the
+  log — exists only outside the boxes and is derivable from none of them.
+- **J4.** Phase control is orchestrator-owned. Claims and submissions are
+  accepted only in declared phases, and no team can advance, observe early,
+  or extend a phase.
+- **J5.** An agent's action surface is exactly the declared tool set, with
+  no unmediated path to another team's box or to the orchestrator.
+- **J6.** Every team receives the same image, the same resource limits, and
+  the same schedule.
+- **J7.** The defender's mutation path is orchestrator-mediated, so every
+  edit and restart is observable in the log.
+- **J8.** An orchestrator fault is recorded as an orchestrator fault, never
+  as a team's outcome.
+- **J9.** One container per service, and a challenge exposes one public
+  interface.
+
 ### Where each group is enforced
 
 | Group | Enforced at |
 |---|---|
 | A, B, I1, I3 | curation and authoring review |
 | C, D, E, F | static verification and framework contract |
-| G | orchestrator implementation |
+| G, J | orchestrator implementation |
 | H | authoring review, exercised every round |

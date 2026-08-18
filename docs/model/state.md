@@ -80,7 +80,7 @@ The answer is that the orchestrator instruments rather than judges
 ([G1](../invariants.md#g-measurement-and-recording)).
 
 > A match produces a log of what was observed, including what could not be
-> determined. Scores are computed from that log afterwards, so no runtime
+> determined. Scores are computed from that log afterwards, so no orchestrator
 > component decides a verdict.
 
 Retry is the only exception, because it is the only response that cannot be
@@ -94,7 +94,7 @@ Availability is therefore telemetry rather than a penalty. The poller
 samples, the samples are recorded with their outcomes, and any definition of
 uptime can be computed from them later. A defender that keeps the service
 running but blocks the facility's privileged channel is recorded as its own
-event kind rather than being priced at runtime, and the same holds for a
+event kind rather than being priced during the match, and the same holds for a
 convergence failure that cannot be separated from an infrastructure fault
 in the moment.
 

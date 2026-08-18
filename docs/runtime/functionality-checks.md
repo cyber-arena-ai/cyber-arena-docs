@@ -41,7 +41,7 @@ recorded independently, and reading a defense as functional only when
 repeated randomized runs all pass is one interpretation of that record —
 the strictest, and the one that removes the residual chance that a canned or
 partially amputated implementation happens to match a single run's shape.
-The runtime does not apply that rule; it supplies the runs.
+The orchestrator does not apply that rule; it supplies the runs.
 
 The checker is bound by a two-sided constraint. Feature amputation and
 canned responses must fail it, and an equivalent narrow hardening must pass
