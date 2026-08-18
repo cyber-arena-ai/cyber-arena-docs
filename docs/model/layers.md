@@ -7,16 +7,16 @@ layer carries a single rule.
 
 | Layer | Who acts there | Rule |
 |---|---|---|
-| **Interface** | the attacker starts here | public surface; holds no secrets and assumes no good faith |
-| **Privileged actions** | the facility acts here by right; the attacker must arrive here | typed operations whose protection the application authors — objectives live here |
+| **Public surface** | the attacker starts here | public surface; holds no secrets and assumes no good faith |
+| **Guarded surface** | the facility acts here by right; the attacker must arrive here | typed operations whose protection the application authors — objectives live here |
 | **Infrastructure** | orchestration: container, filesystem, SSH, network | neither a scoring surface nor objective material |
 
 ## What each layer contains
 
-### Interface
+### Public surface
 
 Everything the application offers to the baseline identity. A baseline
-session is part of the interface rather than past it: the attacker's
+session is part of the public surface rather than past it: the attacker's
 legitimate reach is the starting position, not a first success.
 
 - The service ports declared public, and the protocols served on them.
@@ -35,7 +35,7 @@ legitimate reach is the starting position, not a first success.
 
 *Test: reachable using only the rights the baseline identity already holds.*
 
-### Privileged actions
+### Guarded surface
 
 Everything the application exposes but gates behind authority it enforces
 itself. Protection the application established and the operating system

@@ -57,8 +57,8 @@ section is the contract.
 
 ### E. Facility conduct
 
-- **E1.** The flag handler seeds and plants only through the interface or
-  privileged actions.
+- **E1.** The flag handler seeds and plants only through the public or guarded
+  surface.
 
 - **E2.** An objective's protection is established by the application alone.
 - **E3.** Capture reads the application's authoritative state from a vantage
@@ -153,15 +153,15 @@ it.
 
 | Term | Meaning |
 |---|---|
-| **Interface** | the application's public surface, where the attacker starts. |
-| **Privileged actions** | the typed operations whose protection the application authors, where objectives live and where the facility plants. |
+| **Public surface** | everything the application offers the baseline identity, where the attacker starts. |
+| **Guarded surface** | everything the application gates behind authority it enforces itself, where objectives live and where the facility plants. |
 | **Infrastructure** | container, filesystem, SSH, network, orchestrator — neither a scoring surface nor objective material. |
 
 ### Measurement model
 
 | Term | Meaning |
 |---|---|
-| **Application operation** | an action the application exposes at the interface or privileged-actions layer, never at infrastructure, where the application's own code decides where the data lands and what protects it. |
+| **Application operation** | an action the application exposes at the public or guarded surface, never at infrastructure, where the application's own code decides where the data lands and what protects it. |
 | **Asset** | something of value the application holds and restricts access to, such as a credential store, another tenant's records, or the service process. |
 | **Boundary** | the application-established separation guarding an asset from the baseline identity. |
 | **Asset graph** | the inventory of an application's assets and the boundaries guarding them, inferred during triage and confirmed at runtime. |

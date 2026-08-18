@@ -51,11 +51,7 @@
 *[Capability]: The independently scored outcome of reaching an objective, reported under that objective's attack scope.
 *[capabilities]: The independently scored outcome of reaching an objective, reported under that objective's attack scope.
 
-*[interface]: The application's public surface, where the attacker starts.
-*[Interface]: The application's public surface, where the attacker starts.
 
-*[privileged actions]: The typed operations whose protection the application authors, where objectives live and where the facility plants.
-*[Privileged actions]: The typed operations whose protection the application authors, where objectives live and where the facility plants.
 
 *[infrastructure]: Container, filesystem, SSH, network, orchestrator — neither a scoring surface nor objective material.
 *[Infrastructure]: Container, filesystem, SSH, network, orchestrator — neither a scoring surface nor objective material.
@@ -85,3 +81,8 @@
 *[application operation]: An action the application exposes at the interface or privileged-actions layer, never at infrastructure, where the application's own code decides where the data lands and what protects it.
 *[application operations]: An action the application exposes at the interface or privileged-actions layer, never at infrastructure, where the application's own code decides where the data lands and what protects it.
 *[Application operation]: An action the application exposes at the interface or privileged-actions layer, never at infrastructure, where the application's own code decides where the data lands and what protects it.
+
+*[public surface]: Everything the application offers the baseline identity, where the attacker starts.
+*[Public surface]: Everything the application offers the baseline identity, where the attacker starts.
+*[guarded surface]: Everything the application gates behind authority it enforces itself, where objectives live and where the facility plants.
+*[Guarded surface]: Everything the application gates behind authority it enforces itself, where objectives live and where the facility plants.

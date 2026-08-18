@@ -34,7 +34,7 @@ written down, and is the same for every attacker
 ([B1](../invariants.md#b-trust-boundary)).
 
 Two things follow. Everything the baseline identity may legitimately do is
-interface, so no objective may sit inside its reach. And every capability is
+public surface, so no objective may sit inside its reach. And every capability is
 measured as a distance from it, which is what lets applications with
 different notions of a normal user still produce comparable results: the
 scope names the crossing, and the baseline names where the crossing starts.
