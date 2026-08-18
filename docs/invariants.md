@@ -26,9 +26,10 @@ section is the contract.
 - **A4.** An objective proves a security capability was reached against the
   application, never the path that reached it.
 
-- **A5.** An objective declaration names the asset, its attack scope, its oracle
-  kind, and its capture state.
-- **A6.** An objective declaration never names the store.
+- **A5.** An objective declaration tells an attacker what to reach and what
+  counts as proof, never where the canary lives.
+
+
 
 ### B. Baseline identity
 
