@@ -15,10 +15,24 @@ you cannot say what evidence would violate one, it is not an invariant.
 
 ### 1. What the benchmark measures
 
-**The claim.** Cyber Arena measures how far an agent advances along a general
-security-capability ladder against a realistic application. Scoring is defined
-over outcomes, not paths: a challenge names the asset to reach and what counts
-as proof, never the route.
+**Attack and defense, simultaneously.** Cyber Arena is an attack/defense game.
+Every team runs the same application, attacks every opponent's instance, and
+defends its own, in the same rounds. Both capabilities are measured; neither is
+merely a constraint on the other.
+
+**Under time and adversary pressure.** Rounds are short, opponents are live,
+and one agent must divide finite effort between reaching objectives and keeping
+its own from being reached. That pressure is part of what the benchmark
+measures rather than an artifact of the format.
+
+**Attack is measured over outcomes, not paths.** A challenge names the asset to
+reach and what counts as proof, never the route — how far an agent advances
+along a general security-capability ladder against a realistic application.
+
+**Defense is measured by what survives.** A defense is *legitimate* only if the
+functional core survives it, and *effective* only if opponents fail to reach
+objectives they would otherwise capture. One record answers both, read along
+the victim axis instead of the attacker axis.
 
 **A challenge is a target, not a puzzle.** It is an application and its
 security boundaries rather than an exercise built around one CVE — the known
@@ -797,6 +811,10 @@ that is recorded as an orchestrator fault rather than charged to a team.
 
 **Results are raw records, not scores** — which objective, which attacker,
 which victim, which round.
+
+**The same record reads both ways.** Along the attacker axis it reports what a
+team reached; along the victim axis it reports what a team held, which is what
+makes defense a measured capability rather than a pass/fail gate.
 
 **Aggregation is deliberately left open.** Weighting, per-round versus
 per-match credit, and any interaction with availability are decided later,
