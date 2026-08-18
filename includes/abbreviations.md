@@ -60,14 +60,17 @@
 *[infrastructure]: Container, filesystem, SSH, network, orchestrator — neither a scoring surface nor cell material.
 *[Infrastructure]: Container, filesystem, SSH, network, orchestrator — neither a scoring surface nor cell material.
 
-*[runtime]: The pinned upstream application: its code, its authorization logic, and the default protection it gives each asset class.
-*[Runtime]: The pinned upstream application: its code, its authorization logic, and the default protection it gives each asset class.
 
-*[deployment]: The Dockerfile, entrypoint, and provisioning that stand the application up and seed its state.
-*[Deployment]: The Dockerfile, entrypoint, and provisioning that stand the application up and seed its state.
 
 *[genuine path]: A path crossing a boundary that exists in the upstream application, as against an arena-specific path that depends on fixtures the challenge introduced.
 *[arena-specific path]: A path that depends on fixtures, secrets, interfaces, or behavior introduced by the challenge environment.
 
 *[reproduction]: The per-instance label for cells the floor witness reaches, read off the record after the fact.
 *[escalation]: The per-instance label for cells beyond those the floor witness reaches, read off the record after the fact.
+
+<!-- Deliberately NOT auto-linked: runtime and deployment.
+     Both are defined terms, but most of their occurrences in this site use the
+     ordinary sense ("confirmed at runtime", "a legitimate deployment"), and the
+     abbr extension marks EVERY occurrence with no way to exclude one. A tooltip
+     that is wrong more often than right is worse than none. Both remain defined
+     in the terminology table. -->
