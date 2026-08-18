@@ -44,11 +44,11 @@ section is the contract.
 - **C6.** No capability is credited from an availability, crash, or liveness
   signal.
 
-### D. Seeded context
+### D. Seed data
 
-- **D1.** The seeded population is a pure function of a per-team seed.
-- **D2.** No team can derive another team's seeded population.
-- **D3.** The flag handler creates the seeded population, and its layout is
+- **D1.** The seed data is a pure function of a per-team seed.
+- **D2.** No team can derive another team's seed data.
+- **D3.** The flag handler creates the seed data, and its layout is
   identical in every round.
 
 
@@ -165,6 +165,7 @@ it.
 | **Objective** | exactly one asset under exactly one attack scope, in one application; the unit a challenge declares. |
 | **Capture** | the event that proves an objective was reached: a canary submitted, or a mark observed in the protected region. |
 | **Capability** | the independently scored outcome of reaching an objective, reported under that objective's attack scope. |
+| **Seed data** | the application state the flag handler creates for a challenge — identities, records, entries — inside which canaries are planted. |
 | **Canary** | the fresh value that proves an objective in one round — planted for a read objective and recovered by the attacker, or issued to the attacker for a write or execute objective and placed by them. |
 | **Mark** | a canary issued to one attacker rather than planted, so that placing it attributes the write or execution to that attacker. |
 | **Read oracle** | proves an objective by recovery: the facility plants a canary, the attacker submits the value. |

@@ -1,4 +1,4 @@
-# Rotation and seeded context
+# Rotation and seed data
 
 
 Rotation is not a property of one oracle. Every path requires the same
@@ -30,7 +30,7 @@ indistinguishable and one may hand it to the other. Rotation bounds that
 window to a single round rather than closing it, and the asymmetry is
 accepted rather than concealed: observed objectives attribute, read objectives do not.
 
-## Seeded context defeats rehearsal, not replay
+## Seed data defeats rehearsal, not replay
 
 Every team runs the same application image and holds privileged access to
 its own box. If the seeded data layer were identical across teams, an
@@ -45,7 +45,7 @@ credential store, but the challenge populates it, so which entry under which
 identity holds the canary still differs per team. The asset is fixed by the
 application; its contents are ours.
 
-The flag handler owns the seeded population, because the population and the
+The flag handler owns the seed data, because the population and the
 canary inside it are one concern: the handler that plants a canary into a
 credential entry is the code that must know the entry exists. It creates the
 population on first placement and reconciles it every round thereafter, so a
@@ -58,8 +58,8 @@ replay.
 
 ## Seeding is deterministic
 
-The seeded population must be a pure function of a per-team seed rather than
-freshly sampled ([D1](../invariants.md#d-seeded-context)).
+The seed data must be a pure function of a per-team seed rather than
+freshly sampled ([D1](../invariants.md#d-seed-data)).
 
 - **Derive rather than sample.** Identities, names, identifiers, and paths
   all follow from the seed by a documented function.

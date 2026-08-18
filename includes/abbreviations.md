@@ -78,3 +78,6 @@
 *[capture]: The event that proves an objective was reached: a canary submitted, or a mark observed in the protected region.
 *[Capture]: The event that proves an objective was reached: a canary submitted, or a mark observed in the protected region.
 *[captures]: The event that proves an objective was reached: a canary submitted, or a mark observed in the protected region.
+
+*[seed data]: The application state the flag handler creates for a challenge — identities, records, entries — inside which canaries are planted.
+*[Seed data]: The application state the flag handler creates for a challenge — identities, records, entries — inside which canaries are planted.

@@ -65,7 +65,7 @@ state. The rule is narrower ([E2](../invariants.md#e-facility-conduct)):
 > A probe may create the state an objective needs, through the application's
 > own mechanism. It may never add protection to that state.
 
-Creating is allowed because placement owns the seeded population: the probe
+Creating is allowed because placement owns the seed data: the probe
 that plants a canary into a credential entry is the code that must create
 that entry. Protecting is not, because protection has to be inherited from
 the application rather than authored by the challenge.

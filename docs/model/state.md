@@ -11,7 +11,7 @@ attribution is not reliably possible after the fact.
 Four assumptions follow, and they are chosen so that most damage needs no
 attribution at all.
 
-1. **All evidence is facility-owned.** Canaries and seeded context sit
+1. **All evidence is facility-owned.** Canaries and seed data sit
    inside the box but belong to neither team. Damage to them is a
    measurement problem before it is a game event.
 2. **Derivable state is restored, never scored.** The context follows from
@@ -25,7 +25,7 @@ attribution at all.
 
 Availability follows from the same design without extra rules. The
 functional check provisions its own participants, so a defender's
-availability does not depend on seeded context and an attacker cannot damage
+availability does not depend on seed data and an attacker cannot damage
 a victim's uptime by destroying it.
 
 One residual is accepted rather than solved. An attacker that destroys a
