@@ -21,15 +21,14 @@ section is the contract.
   plant through.
 
 - **A3.** No objective lies within the baseline identity's legitimate reach.
-- **A4.** Every asset class the application exposes is either assigned its
-  objectives or excluded with a recorded reason.
-- **A5.** No objective's proof material is contained in or derived from another
+
+- **A4.** No objective's proof material is contained in or derived from another
   objective's.
-- **A6.** Objectives are derived from the asset graph and never from the
+- **A5.** Objectives are derived from the asset graph and never from the
   vulnerability.
-- **A7.** An objective declaration names the asset, its attack scope, its oracle
+- **A6.** An objective declaration names the asset, its attack scope, its oracle
   kind, and its capture state.
-- **A8.** An objective declaration never names the store.
+- **A7.** An objective declaration never names the store.
 
 ### B. Baseline identity
 
