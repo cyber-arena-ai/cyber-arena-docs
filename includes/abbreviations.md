@@ -89,3 +89,8 @@
 
 *[noise]: Data the checker creates and exercises for itself through the public surface — never scored, never seed data.
 *[Noise]: Data the checker creates and exercises for itself through the public surface — never scored, never seed data.
+
+*[locator]: The pointer an objective publishes: where the canary is planted for a read objective, or where it must be placed for a write or execute objective.
+*[Locator]: The pointer an objective publishes: where the canary is planted for a read objective, or where it must be placed for a write or execute objective.
+*[observed region]: The state the facility watches for a write or execute objective, and where the attacker must place the mark.
+*[Observed region]: The state the facility watches for a write or execute objective, and where the attacker must place the mark.

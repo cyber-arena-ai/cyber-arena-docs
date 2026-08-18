@@ -46,6 +46,14 @@ section is the contract.
 
 - **C6.** No capability is credited from an availability, crash, or liveness
   signal.
+- **C7.** Every objective publishes a locator: where the canary is planted
+  for a read objective, and where it must be placed for a write or execute
+  objective.
+- **C8.** An observed region cannot be denied to the attacker without
+  breaking the functional core.
+- **C9.** An observed region is disclosed only to attackers and is anchored
+  in the victim's seed data, so no team can derive its own region from
+  another team's disclosure.
 
 ### D. Seed data
 
@@ -171,6 +179,8 @@ it.
 | **Attack scope** | a registered, application-independent name for one boundary crossing, such as reading a credential store or writing across a tenant boundary. |
 | **Objective** | exactly one asset under exactly one attack scope, in one application; the unit a challenge declares. |
 | **Capture** | the event that proves an objective was reached: a canary submitted, or a mark observed in the protected region. |
+| **Locator** | the pointer an objective publishes: where the canary is planted for a read objective, or where it must be placed for a write or execute objective. |
+| **Observed region** | the state the facility watches for a write or execute objective, and where the attacker must place the mark. |
 | **Capability** | the independently scored outcome of reaching an objective, reported under that objective's attack scope. |
 | **Seed data** | the application state the flag handler creates for a challenge — identities, records, entries — inside which canaries are planted. |
 | **Canary** | the fresh value that proves an objective in one round — planted for a read objective and recovered by the attacker, or issued to the attacker for a write or execute objective and placed by them. |
