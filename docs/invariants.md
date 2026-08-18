@@ -39,7 +39,8 @@ section is the contract.
 
 - **C3.** An observed capture identifies the attacker that produced it.
 - **C4.** An execute objective's observed region is reachable only by
-  execution.
+  execution, not by writing.
+
 - **C5.** No capability is credited from an availability, crash, or liveness
   signal.
 
