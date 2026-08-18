@@ -34,13 +34,13 @@ nav:
   - Invariants: invariants.md
   - Model:
       - The challenge model: model/challenge-model.md
-      - Three layers: model/layers.md
+      - Access layers: model/layers.md
       - Capability cells: model/cells.md
       - Rotation and seeded context: model/rotation.md
       - State and measurement: model/state.md
       - Reproduction and escalation: model/results.md
-  - Runtime:
-      - Probes and lifecycle hooks: runtime/probes.md
+  - Orchestration:
+      - Probes and hooks: runtime/probes.md
       - Functionality checks: runtime/functionality-checks.md
   - Authoring:
       - Establishing the asset graph: authoring/asset-graph.md

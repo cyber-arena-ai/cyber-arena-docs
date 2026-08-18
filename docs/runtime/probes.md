@@ -1,4 +1,4 @@
-# Probes and lifecycle hooks
+# Probes and hooks
 
 
 Probes should be organized by what they do to the running box and whom they

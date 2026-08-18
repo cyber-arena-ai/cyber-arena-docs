@@ -8,6 +8,16 @@ vocabulary and the invariants, and every other page, the orchestrator, and
 each challenge package must follow it. Where anything disagrees with it, it
 governs.
 
+## Amending the invariants
+
+Amend the invariants page deliberately and never in passing. A change there
+invalidates conclusions reached under the old wording, so an amendment
+carries the reasoning for the change and an assessment of what it breaks.
+
+Invariant identifiers (`A1`–`I3`) are referenced from other pages and from
+review checklists. Do not renumber or reorder them; retire one in place
+rather than reusing its identifier.
+
 ## Local development
 
 ```bash

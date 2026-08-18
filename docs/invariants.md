@@ -5,12 +5,12 @@ and in any challenge package elaborates it, and where they disagree, this
 page governs. It holds the terms, used with exactly one meaning throughout,
 and the invariants, stated so that each can be checked and failed.
 
-## Terms
+## Terminology
 
 Where a term also names something in the orchestrator, the code meaning wins
 and this document follows it.
 
-### What ships in a challenge
+### Challenge composition
 
 | Term | Meaning |
 |---|---|
@@ -19,7 +19,7 @@ and this document follows it.
 | **Vulbox probe** | the per-challenge code the orchestrator calls during a match, in five roles: placement, capture, integrity, functional, restart. May change transient state; may not create or protect an asset. |
 | **Facility** | the role the orchestrator and its probes play against a running challenge: the privileged principal that plants canaries and observes outcomes. |
 
-### The three layers
+### Access layers
 
 | Term | Meaning |
 |---|---|
@@ -27,7 +27,7 @@ and this document follows it.
 | **Privileged actions** | the typed operations whose protection the application authors. Where cells live and where the facility plants. |
 | **Infrastructure** | container, filesystem, SSH, network, orchestrator. Neither a scoring surface nor cell material. |
 
-### What is measured
+### Measurement model
 
 | Term | Meaning |
 |---|---|
@@ -51,7 +51,7 @@ and this document follows it.
 ## The invariants
 
 Everything the rest of this site argues for reduces to the properties below.
-The Model, Runtime, and Authoring pages give the reasoning; this section is
+The Model, Orchestration, and Authoring pages give the reasoning; this section is
 the contract.
 
 ### A. Application and cells

@@ -1,7 +1,7 @@
-# Three layers
+# Access layers
 
 
-The model is concrete once the running challenge is read as three layers,
+The model is concrete once the running challenge is read as three access layers,
 because each participant enters at exactly one of them and each layer
 carries a single rule.
 
