@@ -35,7 +35,7 @@ section is the contract.
 - **C1.** Every round issues a fresh canary for each objective.
 - **C2.** Only the current round's canary may be credited.
 
-- **C3.** A capture is impossible without crossing the boundary it proves.
+- **C3.** Canaries and marks are unguessable and unforgeable.
 
 - **C4.** An observed capture identifies the attacker that produced it.
 - **C5.** An execute objective's observed region is reachable only by
