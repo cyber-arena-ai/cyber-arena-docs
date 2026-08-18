@@ -16,10 +16,8 @@ section is the contract.
 - **A1.** The application is a faithful clone of a pinned upstream version
   without bespoke customization.
 
-- **A2.** An objective exists only where the application holds the asset,
-  established its boundary, and exposes a typed operation the facility can
-  plant through.
-
+- **A2.** An objective exists only in assets the application owns, never in
+  infrastructure.
 
 - **A3.** An objective proves a security capability was reached against the
   application, never the attack chain that reached it.
