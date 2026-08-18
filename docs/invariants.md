@@ -51,8 +51,8 @@ and this document follows it.
 ## The invariants
 
 Everything the rest of this site argues for reduces to the properties below.
-The Model, Orchestration, and Authoring pages give the reasoning; this section is
-the contract.
+The Model, Orchestration, and Authoring pages give the reasoning; this
+section is the contract.
 
 ### A. Application and cells
 

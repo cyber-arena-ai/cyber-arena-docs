@@ -44,5 +44,6 @@ elaborates it. Several of its terms — cell, canary, facility, probe — are
 narrower here than in ordinary use, so read them before the rest.
 
 The sections under **Model** give the reasoning behind the invariants,
-**Orchestration** covers what the orchestrator calls each round, and **Authoring**
-covers the judgements a challenge author makes before any of it applies.
+**Orchestration** covers what the orchestrator calls each round, and
+**Authoring** covers the judgements a challenge author makes before any of it
+applies.
