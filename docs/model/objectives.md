@@ -23,7 +23,7 @@ workflow. Every asset class the application exposes is either assigned its
 objectives or explicitly excluded with a recorded reason, so a thin
 objective set is a stated decision rather than an oversight.
 
-Because placement is systematic, the proof material an objective is measured by
+Because placement is systematic, the canary an objective is measured by
 must be fresh every round, and the context it sits in must differ between
 victims. Those two requirements are separate and are treated in [Rotation and seeded
 context](rotation.md). No capability may be credited on an availability,

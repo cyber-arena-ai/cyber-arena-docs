@@ -5,7 +5,7 @@ Rotation is not a property of one oracle. Every path requires the same
 thing, and the paths differ only in who supplies it
 ([C1](../invariants.md#c-proof-and-credit)):
 
-> Every round issues fresh proof material for every objective, and only the
+> Every round issues a fresh canary for every objective, and only the
 > current round's material may be credited.
 
 A read objective satisfies this by planting a new value the attacker must find
