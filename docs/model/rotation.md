@@ -45,10 +45,15 @@ credential store, but the challenge populates it, so which entry under which
 identity holds the canary still differs per team. The asset is fixed by the
 application; its contents are ours.
 
-Seeding belongs to deployment and runs once per team at bring-up. A probe
-may not create assets, and the functional core needs a stable population to
-exercise. Per-round reseeding would also achieve nothing, because the
-victim axis already denies rehearsal and the round axis already denies
+The flag handler owns the seeded population, because the population and the
+canary inside it are one concern: the handler that plants a canary into a
+credential entry is the code that must know the entry exists. It creates the
+population on first placement and reconciles it every round thereafter, so a
+wipe is repaired rather than fatal.
+
+The layout it creates is identical in every round. The functional core needs
+a stable population to exercise, and reseeding would achieve nothing anyway:
+the victim axis already denies rehearsal and the round axis already denies
 replay.
 
 ## Seeding is deterministic

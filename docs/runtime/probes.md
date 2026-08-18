@@ -62,12 +62,15 @@ A probe cannot be required to leave the application untouched, because a
 functional probe must exercise it, and exercising a real application changes
 state. The rule is narrower ([E2](../invariants.md#e-facility-conduct)):
 
-> A probe may change transient state. It may not create an asset or add
-> protection to one.
+> A probe may create the state an objective needs, through the application's
+> own mechanism. It may never add protection to that state.
 
-Durable state that a later round depends on therefore belongs to deployment,
-never to a probe. A restart path that writes a protected baseline for a
-later functional comparison has crossed this line, even though the value it
-writes is derived from the application. Deployment hooks — initial start,
-seeding, deliberate breakage, facility setup — run at bring-up and are
-allowed to create state precisely because they run before the contest does.
+Creating is allowed because placement owns the seeded population: the probe
+that plants a canary into a credential entry is the code that must create
+that entry. Protecting is not, because protection has to be inherited from
+the application rather than authored by the challenge.
+
+The line still bites elsewhere. A restart path that writes a protected
+baseline for a later functional comparison has crossed it, even though the
+value it writes is derived from the application — the challenge chose that
+file and that mode, so the challenge is the mechanism.
