@@ -35,7 +35,8 @@ section is the contract.
 - **C1.** Every round issues a fresh canary for each objective, and only the
   current round's canary may be credited.
 
-- **C2.** A canary is computable only by reaching its objective.
+- **C2.** A capture is impossible without crossing the boundary it proves.
+
 - **C3.** An observed capture identifies the attacker that produced it.
 - **C4.** An execute objective's observed region is reachable only by
   execution.
