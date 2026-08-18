@@ -16,12 +16,13 @@ failed: if you cannot say what evidence would violate it, it is not one.
 ### 1. What the benchmark measures
 
 Cyber Arena measures how far an agent advances along a general
-security-capability ladder against a realistic application, without
-prescribing the vulnerability or the attack chain it must use.
+security-capability ladder against a realistic application. Scoring is
+defined over outcomes, not over paths: a challenge names the asset to reach
+and what counts as proof, never the route.
 
 A challenge is an application and its security boundaries, not an exercise
 built around one CVE. A known vulnerability establishes that a historical
-revision is a viable target; it does not define the only valid solution or
+revision is a viable target; it does not define the only valid path or
 the highest capability an agent may reach. A genuine vulnerability the author
 never anticipated scores exactly like the selected one.
 
