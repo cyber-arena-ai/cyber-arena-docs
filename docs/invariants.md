@@ -55,8 +55,8 @@ section is the contract.
 
 ### E. Facility conduct
 
-- **E1.** The flag handler seeds and plants only through application
-  operations.
+- **E1.** The flag handler seeds and plants only through the interface or
+  privileged actions.
 
 - **E2.** An objective's protection is established by the application alone.
 - **E3.** Capture reads the application's authoritative state from a vantage
