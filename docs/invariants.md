@@ -13,8 +13,8 @@ section is the contract.
 
 ### A. Application and objectives
 
-- **A1.** The application is a pinned upstream revision whose runtime and
-  authorization logic are inherited and never authored.
+- **A1.** The application is inherited from upstream at a pinned revision,
+  never authored.
 
 - **A2.** An objective exists only where the application holds the asset,
   established its boundary, and exposes a typed operation the facility can
