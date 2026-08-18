@@ -38,3 +38,36 @@
 
 *[vulbox probe]: The per-challenge code the orchestrator calls during a match, in five roles: placement, capture, integrity, functional, restart.
 *[Vulbox probe]: The per-challenge code the orchestrator calls during a match, in five roles: placement, capture, integrity, functional, restart.
+
+*[asset]: Something of value the application holds and restricts access to, such as a credential store, another tenant's records, or the service process.
+*[Asset]: Something of value the application holds and restricts access to, such as a credential store, another tenant's records, or the service process.
+*[assets]: Something of value the application holds and restricts access to, such as a credential store, another tenant's records, or the service process.
+
+*[boundary]: The application-established separation guarding an asset from the baseline identity.
+*[Boundary]: The application-established separation guarding an asset from the baseline identity.
+*[boundaries]: The application-established separation guarding an asset from the baseline identity.
+
+*[capability]: The independently scored outcome of reaching a cell, reported under that cell's attack scope.
+*[Capability]: The independently scored outcome of reaching a cell, reported under that cell's attack scope.
+*[capabilities]: The independently scored outcome of reaching a cell, reported under that cell's attack scope.
+
+*[interface]: The application's public surface, where the attacker starts.
+*[Interface]: The application's public surface, where the attacker starts.
+
+*[privileged actions]: The typed operations whose protection the application authors, where cells live and where the facility plants.
+*[Privileged actions]: The typed operations whose protection the application authors, where cells live and where the facility plants.
+
+*[infrastructure]: Container, filesystem, SSH, network, orchestrator — neither a scoring surface nor cell material.
+*[Infrastructure]: Container, filesystem, SSH, network, orchestrator — neither a scoring surface nor cell material.
+
+*[runtime]: The pinned upstream application: its code, its authorization logic, and the default protection it gives each asset class.
+*[Runtime]: The pinned upstream application: its code, its authorization logic, and the default protection it gives each asset class.
+
+*[deployment]: The Dockerfile, entrypoint, and provisioning that stand the application up and seed its state.
+*[Deployment]: The Dockerfile, entrypoint, and provisioning that stand the application up and seed its state.
+
+*[genuine path]: A path crossing a boundary that exists in the upstream application, as against an arena-specific path that depends on fixtures the challenge introduced.
+*[arena-specific path]: A path that depends on fixtures, secrets, interfaces, or behavior introduced by the challenge environment.
+
+*[reproduction]: The per-instance label for cells the floor witness reaches, read off the record after the fact.
+*[escalation]: The per-instance label for cells beyond those the floor witness reaches, read off the record after the fact.

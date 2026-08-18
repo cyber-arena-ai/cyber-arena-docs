@@ -191,7 +191,7 @@ it.
 
 | Term | Meaning |
 |---|---|
-| **Asset** | something the application protects — a credential store, another tenant's records, the service process. |
+| **Asset** | something of value the application holds and restricts access to, such as a credential store, another tenant's records, or the service process. |
 | **Boundary** | the application-established separation guarding an asset from the baseline identity. |
 | **Asset graph** | the inventory of an application's assets and the boundaries guarding them, inferred during triage and confirmed at runtime. |
 | **Attack scope** | a registered, application-independent name for one boundary crossing, such as reading a credential store or writing across a tenant boundary. |
