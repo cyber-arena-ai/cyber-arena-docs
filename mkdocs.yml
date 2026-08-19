@@ -33,7 +33,6 @@ theme:
 nav:
   - Overview: index.md
   - The challenge model: challenge-model.md
-  - Glossary: glossary.md
   - Authoring:
       - Judging candidate promise: authoring/judging-promise.md
 

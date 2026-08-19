@@ -8,16 +8,6 @@ a challenge is and closes each section with the invariants that make it
 checkable. Every other page, the orchestrator, and each challenge package
 must follow it. Where anything disagrees with it, it governs.
 
-## Amending the model
-
-Amend it deliberately and never in passing. A change there invalidates
-conclusions reached under the old wording, so an amendment carries the
-reasoning for the change and an assessment of what it breaks.
-
-Invariant identifiers (`A1`–`I9`) are referenced from the orchestrator and
-from review checklists. Do not renumber or reorder them; retire one in place
-rather than reusing its identifier.
-
 ## Local development
 
 ```bash
@@ -47,6 +37,5 @@ agent under evaluation read it.
 docs/
   index.md            overview and reading order
   challenge-model.md  the model and its invariants (normative)
-  glossary.md         defined terms
   authoring/          judgements made before a challenge exists
 ```

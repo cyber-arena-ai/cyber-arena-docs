@@ -1,102 +1,104 @@
-*[objective]: One asset combined with one registered attack scope, in one application. The unit a challenge declares.
-*[Objective]: One asset combined with one registered attack scope, in one application. The unit a challenge declares.
-*[objectives]: One asset combined with one registered attack scope, in one application. The unit a challenge declares.
-*[Objectives]: One asset combined with one registered attack scope, in one application. The unit a challenge declares.
+*[objective]: One protected asset under one attack scope.
+*[Objective]: One protected asset under one attack scope.
+*[objectives]: Protected assets under attack scopes.
+*[Objectives]: Protected assets under attack scopes.
 
-*[canary]: The rotating value the facility plants or issues to measure an objective. An instrument, never an asset.
-*[Canary]: The rotating value the facility plants or issues to measure an objective. An instrument, never an asset.
-*[canaries]: The rotating value the facility plants or issues to measure an objective. An instrument, never an asset.
+*[objective instance]: The concrete protected identity, record, resource, or operation realizing an objective for one victim and round.
+*[Objective instance]: The concrete protected identity, record, resource, or operation realizing an objective for one victim and round.
+*[objective instances]: Concrete protected identities, records, resources, or operations realizing objectives for particular victims and rounds.
 
-*[mark]: The per-attacker, per-round canary used by observed oracles, supplying attribution and replay resistance.
-*[marks]: The per-attacker, per-round canary used by observed oracles, supplying attribution and replay resistance.
+*[proof token]: A facility-generated value used by an oracle as evidence that an objective was reached.
+*[Proof token]: A facility-generated value used by an oracle as evidence that an objective was reached.
+*[proof tokens]: Facility-generated values used by oracles as evidence that objectives were reached.
 
-*[facility]: The role the orchestrator and its probes play against a running challenge: the privileged principal that plants canaries and observes outcomes.
-*[Facility]: The role the orchestrator and its probes play against a running challenge: the privileged principal that plants canaries and observes outcomes.
+*[facility]: The trusted role that creates round context, places proof material, observes outcomes, and records measurements.
+*[Facility]: The trusted role that creates round context, places proof material, observes outcomes, and records measurements.
 
-*[attack scope]: A registered, application-independent name for one boundary crossing. The unit that makes results comparable between challenges.
-*[Attack scope]: A registered, application-independent name for one boundary crossing. The unit that makes results comparable between challenges.
-*[attack scopes]: A registered, application-independent name for one boundary crossing. The unit that makes results comparable between challenges.
+*[attack scope]: An application-independent class of security outcome that crosses an application-enforced boundary and maps to exactly one MITRE CWE Technical Impact.
+*[Attack scope]: An application-independent class of security outcome that crosses an application-enforced boundary and maps to exactly one MITRE CWE Technical Impact.
+*[attack scopes]: Application-independent classes of security outcomes that cross application-enforced boundaries and map to MITRE CWE Technical Impacts.
 
-*[baseline identity]: The attacker's starting principal and everything that principal may legitimately do.
-*[Baseline identity]: The attacker's starting principal and everything that principal may legitimately do.
+*[baseline principal]: An application identity with the challenge's declared normal-user privileges.
+*[Baseline principal]: An application identity with the challenge's declared normal-user privileges.
+*[baseline principals]: Application identities with the challenge's declared normal-user privileges.
 
-*[trust boundary]: The application-established separation guarding an asset from the baseline identity.
-*[Trust boundary]: The application-established separation guarding an asset from the baseline identity.
-*[trust boundaries]: The application-established separations guarding assets from the baseline identity; recorded as the challenge's inventory of what is protected and what is public.
-*[Trust boundaries]: The application-established separations guarding assets from the baseline identity; recorded as the challenge's inventory of what is protected and what is public.
+*[baseline privileges]: Everything a baseline principal may legitimately do without crossing an application-enforced boundary.
+*[Baseline privileges]: Everything a baseline principal may legitimately do without crossing an application-enforced boundary.
 
-*[floor witness]: The advisory-backed path proving at least one objective is reachable at the pinned revision.
-*[Floor witness]: The advisory-backed path proving at least one objective is reachable at the pinned revision.
+*[trust boundary]: The application-established separation denying the baseline principal access to an asset under its baseline privileges.
+*[Trust boundary]: The application-established separation denying the baseline principal access to an asset under its baseline privileges.
+*[trust boundaries]: Application-established separations denying baseline principals access to protected assets under their baseline privileges.
+*[Trust boundaries]: Application-established separations denying baseline principals access to protected assets under their baseline privileges.
 
-*[SLA]: The minimum declared workflows a defense must keep serving.
+*[PoV]: Proof of vulnerability: an advisory-backed, in-band attack path for the pinned revision.
 
-*[read oracle]: Proves an objective by recovery: the facility plants a canary, the attacker submits the value.
-*[Read oracle]: Proves an objective by recovery: the facility plants a canary, the attacker submits the value.
+*[SLA]: The minimum application workflows encoded and exercised by the functional health checker that every defense must keep serving.
 
-*[observed oracle]: Proves an objective by observation: the facility issues a mark, the attacker places it in protected state, the facility observes it privileged-side.
-*[Observed oracle]: Proves an objective by observation: the facility issues a mark, the attacker places it in protected state, the facility observes it privileged-side.
-*[observed oracles]: Proves an objective by observation: the facility issues a mark, the attacker places it in protected state, the facility observes it privileged-side.
+*[read oracle]: Proof by recovery: the facility plants a proof token in protected state and the attacker submits it.
+*[Read oracle]: Proof by recovery: the facility plants a proof token in protected state and the attacker submits it.
 
-*[vulbox probe]: The per-challenge code the orchestrator calls during a match, in five roles: placement, capture, integrity, SLA, restart.
-*[Vulbox probe]: The per-challenge code the orchestrator calls during a match, in five roles: placement, capture, integrity, SLA, restart.
+*[observed oracle]: Proof by placement: the facility issues a proof token and observes it in protected state.
+*[Observed oracle]: Proof by placement: the facility issues a proof token and observes it in protected state.
+*[observed oracles]: Proof mechanisms in which the facility issues proof tokens and observes them in protected state.
 
-*[asset]: Something of value the application holds and restricts access to, such as a credential store, another tenant's records, or the service process.
-*[Asset]: Something of value the application holds and restricts access to, such as a credential store, another tenant's records, or the service process.
-*[assets]: Something of value the application holds and restricts access to, such as a credential store, another tenant's records, or the service process.
+*[vulbox probe]: Current framework code implementing placement, capture, integrity, health checking, or restart.
+*[Vulbox probe]: Current framework code implementing placement, capture, integrity, health checking, or restart.
 
-*[boundary]: The application-established separation guarding an asset from the baseline identity.
-*[Boundary]: The application-established separation guarding an asset from the baseline identity.
-*[boundaries]: The application-established separation guarding an asset from the baseline identity.
+*[asset]: Something of value the application holds and restricts.
+*[Asset]: Something of value the application holds and restricts.
+*[assets]: Things of value the application holds and restricts.
 
-*[capability]: The independently scored outcome of reaching an objective, reported under that objective's attack scope.
-*[Capability]: The independently scored outcome of reaching an objective, reported under that objective's attack scope.
-*[capabilities]: The independently scored outcome of reaching an objective, reported under that objective's attack scope.
+*[capability]: The measured outcome of reaching an objective, reported under its attack scope.
+*[Capability]: The measured outcome of reaching an objective, reported under its attack scope.
+*[capabilities]: Measured outcomes of reaching objectives.
 
+*[infrastructure]: Arena-controlled execution, networking, measurement, and control resources outside the application.
+*[Infrastructure]: Arena-controlled execution, networking, measurement, and control resources outside the application.
 
+*[genuine path]: A path crossing a trust boundary inherited from the upstream application.
+*[arena-specific path]: A path whose decisive boundary or shortcut exists only because of arena infrastructure or arena-introduced protection.
 
-*[infrastructure]: Container, filesystem, SSH, network, orchestrator — neither a scoring surface nor objective material.
-*[Infrastructure]: Container, filesystem, SSH, network, orchestrator — neither a scoring surface nor objective material.
-
-
-
-*[genuine path]: A path crossing a boundary that exists in the upstream application, as against an arena-specific path that depends on fixtures the challenge introduced.
-*[arena-specific path]: A path that depends on fixtures, secrets, interfaces, or behavior introduced by the challenge environment.
-
-*[reproduction]: The per-instance label for objectives the floor witness reaches, read off the record after the fact.
-*[escalation]: The per-instance label for objectives beyond those the floor witness reaches, read off the record after the fact.
+*[reproduction]: A reached objective also reached by the PoV for that challenge instance.
+*[escalation]: A reached objective outside the PoV's reach.
 
 <!-- Deliberately NOT auto-linked: runtime and deployment.
-     Both are defined terms, but most of their occurrences in this site use the
-     ordinary sense ("confirmed at runtime", "a legitimate deployment"), and the
-     abbr extension marks EVERY occurrence with no way to exclude one. A tooltip
-     that is wrong more often than right is worse than none. Both remain defined
-     in the terminology table. -->
+     Most occurrences use their ordinary meanings, so global tooltips would be
+     misleading. Both remain defined in the challenge model. -->
 
-*[capture]: The event that proves an objective was reached: a canary submitted, or a mark observed in the protected region.
-*[Capture]: The event that proves an objective was reached: a canary submitted, or a mark observed in the protected region.
-*[captures]: The event that proves an objective was reached: a canary submitted, or a mark observed in the protected region.
+*[capture]: A trusted observation that an attacker satisfied one current objective oracle.
+*[Capture]: A trusted observation that an attacker satisfied one current objective oracle.
+*[captures]: Trusted observations that attackers satisfied current objective oracles.
 
-*[seed data]: The application state the flag handler creates for a challenge — identities, records, entries — inside which canaries are planted.
-*[Seed data]: The application state the flag handler creates for a challenge — identities, records, entries — inside which canaries are planted.
+*[seed data]: Application state created through application operations to instantiate the current round context.
+*[Seed data]: Application state created through application operations to instantiate the current round context.
 
-*[application operation]: An action the application exposes at the interface or privileged-actions layer, never at infrastructure, where the application's own code decides where the data lands and what protects it.
-*[application operations]: An action the application exposes at the interface or privileged-actions layer, never at infrastructure, where the application's own code decides where the data lands and what protects it.
-*[Application operation]: An action the application exposes at the interface or privileged-actions layer, never at infrastructure, where the application's own code decides where the data lands and what protects it.
+*[round context]: The principals, credentials, records, jobs, paths, and other concrete state realizing objective instances in one round.
+*[Round context]: The principals, credentials, records, jobs, paths, and other concrete state realizing objective instances in one round.
 
-*[public surface]: Everything the application offers the baseline identity, where the attacker starts.
-*[Public surface]: Everything the application offers the baseline identity, where the attacker starts.
-*[guarded surface]: Everything the application gates behind authority it enforces itself, where objectives live and where the facility plants.
-*[Guarded surface]: Everything the application gates behind authority it enforces itself, where objectives live and where the facility plants.
+*[rotation]: Replacement of round context, objective instances, target IDs, and proof tokens before a new round becomes attackable.
+*[Rotation]: Replacement of round context, objective instances, target IDs, and proof tokens before a new round becomes attackable.
 
-*[noise]: Data the checker creates and exercises for itself through the public surface — never scored, never seed data.
-*[Noise]: Data the checker creates and exercises for itself through the public surface — never scored, never seed data.
+*[application operation]: An action exposed by the application whose own code determines where data lands and what protects it.
+*[application operations]: Actions exposed by the application whose own code determines where data lands and what protects it.
+*[Application operation]: An action exposed by the application whose own code determines where data lands and what protects it.
 
-*[canary ID]: The pointer an objective publishes: where the canary is planted for a read objective, or where it must be placed for a write or execute objective.
-*[Canary ID]: The pointer an objective publishes: where the canary is planted for a read objective, or where it must be placed for a write or execute objective.
-*[observed region]: The state the facility watches for a write or execute objective, and where the attacker must place the mark.
-*[Observed region]: The state the facility watches for a write or execute objective, and where the attacker must place the mark.
+*[public surface]: Interfaces, data, and operations available to any baseline principal under those privileges.
+*[Public surface]: Interfaces, data, and operations available to any baseline principal under those privileges.
+*[guarded surface]: Assets and operations the application denies to a principal exercising only baseline privileges and exposes only with additional authority.
+*[Guarded surface]: Assets and operations the application denies to a principal exercising only baseline privileges and exposes only with additional authority.
 
-*[flag handler]: The per-challenge code that creates seed data and plants and rotates canaries in it, through application operations only.
-*[Flag handler]: The per-challenge code that creates seed data and plants and rotates canaries in it, through application operations only.
-*[SLA checker]: The check that exercises the declared SLA and decides whether a defense is legitimate.
-*[match secret]: The facility-held key that seeds per-team derivation, so no team can derive another's layout.
+*[noise]: Non-scoring application data created by the checker to exercise the SLA.
+*[Noise]: Non-scoring application data created by the checker to exercise the SLA.
+
+*[target ID]: The attacker-visible locator for an objective instance: what to read, where to write, or where execution must leave evidence.
+*[Target ID]: The attacker-visible locator for an objective instance: what to read, where to write, or where execution must leave evidence.
+*[target IDs]: Attacker-visible locators for objective instances.
+*[observed region]: The application state watched for a write or execute objective.
+*[Observed region]: The application state watched for a write or execute objective.
+
+*[flag handler]: Current framework code implementing placement and capture for challenge objectives.
+*[Flag handler]: Current framework code implementing placement and capture for challenge objectives.
+*[functional health checker]: The challenge component that owns and externally exercises the SLA to determine whether a defense remains legitimate.
+*[Functional health checker]: The challenge component that owns and externally exercises the SLA to determine whether a defense remains legitimate.
+*[match secret]: Facility-held keying material used to derive independent round context.
+*[live state]: The match state in which teams attack opponents and defend their own applications concurrently.

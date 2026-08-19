@@ -43,9 +43,10 @@ normative page: it defines what a challenge is, section by section, and
 closes each section with the invariants that make it checkable. Everything
 else on this site and in the orchestrator elaborates it.
 
-Several of its terms — objective, canary, facility, noise — are narrower here
-than in ordinary use. The [glossary](glossary.md) carries them, and the site
-shows each definition on hover wherever the term appears.
+Several of its terms — objective, proof token, facility, noise — are narrower here
+than in ordinary use. The challenge model defines them where they are
+introduced, and the site shows each definition on hover wherever the term
+appears.
 
 **Authoring** covers judgements a challenge author makes before any of the
 model applies.
