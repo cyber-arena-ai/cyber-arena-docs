@@ -48,5 +48,4 @@ than in ordinary use. The challenge model defines them where they are
 introduced, and the site shows each definition on hover wherever the term
 appears.
 
-**Authoring** covers judgements a challenge author makes before any of the
-model applies.
+**Authoring guidance is forthcoming.**

@@ -37,5 +37,4 @@ agent under evaluation read it.
 docs/
   index.md            overview and reading order
   challenge-model.md  the model and its invariants (normative)
-  authoring/          judgements made before a challenge exists
 ```

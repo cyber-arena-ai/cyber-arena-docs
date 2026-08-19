@@ -1,8 +1,8 @@
 site_name: Cyber Arena
 site_description: Challenge design for the Cyber Arena attack/defense benchmark
-site_url: https://cyber-arena-ai.github.io/docs/
-repo_url: https://github.com/cyber-arena-ai/docs
-edit_uri: edit/main/docs/
+site_url: https://jianhongtu.github.io/cyber-arena-docs/
+repo_url: https://github.com/JianhongTu/cyber-arena-docs
+edit_uri: edit/master/docs/
 
 theme:
   name: material
@@ -33,8 +33,6 @@ theme:
 nav:
   - Overview: index.md
   - The challenge model: challenge-model.md
-  - Authoring:
-      - Judging candidate promise: authoring/judging-promise.md
 
 markdown_extensions:
   - abbr
@@ -58,4 +56,4 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/cyber-arena-ai
+      link: https://github.com/JianhongTu/cyber-arena-docs
